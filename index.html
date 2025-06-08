@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iARS | Tu mundo. Tu ritmo.</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #000;
+      color: #fff;
+      scroll-behavior: smooth;
+    }
+    header {
+      background-color: #000;
+      padding: 2rem;
+      text-align: center;
+      border-bottom: 1px solid #222;
+    }
+    header h1 {
+      font-size: 2.8rem;
+      color: #FFA500;
+    }
+    .video-section {
+      text-align: center;
+      margin: 2rem 0;
+    }
+    .cta-button {
+      margin-top: 1rem;
+      padding: 1rem 2.5rem;
+      font-size: 1.3rem;
+      background-color: #FFA500;
+      color: #000;
+      border: none;
+      cursor: pointer;
+      border-radius: 12px;
+      box-shadow: 0 0 15px #FFA50055;
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+    }
+    .cta-button:hover {
+      transform: scale(1.07);
+      box-shadow: 0 0 25px #FFA500aa;
+    }
+    .urgency-counter {
+      font-size: 1.5rem;
+      margin: 1.5rem 0;
+      color: red;
+      animation: pulse 1.5s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.6; }
+    }
+    .catalogo {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem;
+    }
+    .producto {
+      background-color: #111;
+      border-radius: 1rem;
+      padding: 1rem;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+    .producto:hover {
+      transform: scale(1.02);
+    }
+    .producto img {
+      max-width: 100%;
+      border-radius: 1rem;
+    }
+    .producto h3 {
+      margin: 0.5rem 0;
+    }
+    .producto p {
+      color: #ccc;
+    }
+    .producto button {
+      margin-top: 0.5rem;
+      background-color: #FFA500;
+      color: #000;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: 0.5rem;
+      cursor: pointer;
+    }
+    .testimonios {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      gap: 1rem;
+      padding: 2rem 1rem;
+      scroll-snap-type: x mandatory;
+    }
+    .testimonial {
+      background: #111;
+      border-radius: 1rem;
+      padding: 1rem;
+      min-width: 280px;
+      text-align: center;
+      scroll-snap-align: center;
+      flex-shrink: 0;
+    }
+    .testimonial img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .formulario {
+      max-width: 400px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background: #111;
+      border-radius: 1rem;
+    }
+    .formulario input, .formulario button {
+      width: 100%;
+      margin-bottom: 1rem;
+      padding: 0.75rem;
+      border-radius: 0.5rem;
+      border: none;
+    }
+    .formulario button {
+      background-color: #FFA500;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+  <script>
+    let unidades = 7;
+    function actualizarContador() {
+      const counter = document.getElementById('contador');
+      if (unidades > 0) {
+        unidades--;
+        counter.innerText = `🔥 Solo ${unidades} unidades disponibles hoy`;
+      }
+    }
+    setInterval(actualizarContador, 15000);
+  </script>
+</head>
+<body>
+  <header>
+    <h1>iARS | Tu mundo. Tu ritmo.</h1>
+  </header>
+
+  <section class="video-section">
+    <video width="320" controls poster="https://via.placeholder.com/320x180">
+      <source src="media/iarspromo.mp4" type="video/mp4">
+      Tu navegador no soporta video.
+    </video>
+    <div class="urgency-counter" id="contador">🔥 Solo 7 unidades disponibles hoy</div>
+    <button class="cta-button" onclick="window.open('https://wa.me/51966885672','_blank')">¡Separar ahora!</button>
+  </section>
+
+  <section class="catalogo">
+    <div class="producto">
+      <img src="https://via.placeholder.com/200" alt="iARS Pods Pro">
+      <h3>iARS Pods Pro</h3>
+      <p>De S/139 a <strong>S/89</strong></p>
+      <button onclick="window.open('https://wa.me/51966885672','_blank')">Comprar</button>
+    </div>
+    <div class="producto">
+      <img src="https://via.placeholder.com/200" alt="Smartwatch Fit">
+      <h3>Smartwatch Fit</h3>
+      <p>De S/199 a <strong>S/119</strong></p>
+      <button onclick="window.open('https://wa.me/51966885672','_blank')">Comprar</button>
+    </div>
+    <div class="producto">
+      <img src="https://via.placeholder.com/200" alt="Combo Auris + Watch">
+      <h3>Combo Auris + Watch</h3>
+      <p>De S/289 a <strong>S/199</strong></p>
+      <button onclick="window.open('https://wa.me/51966885672','_blank')">Comprar</button>
+    </div>
+    <div class="producto">
+      <img src="https://via.placeholder.com/200" alt="Cargador Magnético">
+      <h3>Cargador Magnético</h3>
+      <p>De S/79 a <strong>S/49</strong></p>
+      <button onclick="window.open('https://wa.me/51966885672','_blank')">Comprar</button>
+    </div>
+    <div class="producto">
+      <img src="https://via.placeholder.com/200" alt="Mini Speaker Bluetooth">
+      <h3>Mini Speaker Bluetooth</h3>
+      <p>De S/99 a <strong>S/69</strong></p>
+      <button onclick="window.open('https://wa.me/51966885672','_blank')">Comprar</button>
+    </div>
+    <div class="producto">
+      <img src="https://via.placeholder.com/200" alt="iARS Pods Touch Pantalla">
+      <h3>iARS Pods Touch Pantalla</h3>
+      <p>De S/149 a <strong>S/99</strong></p>
+      <button onclick="window.open('https://wa.me/51966885672','_blank')">Comprar</button>
+    </div>
+  </section>
+
+  <section class="testimonios">
+    <div class="testimonial">
+      <img src="https://i.pravatar.cc/60?u=1" alt="Cliente 1">
+      <p>“¡Los iARS son otro level! Me aislan del mundo y suenan brutal.” ⭐⭐⭐⭐⭐</p>
+    </div>
+    <div class="testimonial">
+      <img src="https://i.pravatar.cc/60?u=2" alt="Cliente 2">
+      <p>“Me llegaron en 24 horas y funcionan de locos. Recomendado al 100%.” ⭐⭐⭐⭐⭐</p>
+    </div>
+  </section>
+
+  <section class="formulario">
+    <input type="text" placeholder="Nombre">
+    <input type="tel" placeholder="WhatsApp">
+    <input type="text" placeholder="Producto de interés">
+    <button onclick="window.open('https://wa.me/51966885672','_blank')">Enviar por WhatsApp</button>
+  </section>
+</body>
+</html>
