@@ -127,6 +127,13 @@
       font-size: 0.9rem;
       color: #888;
     }
+      @media screen and (max-width: 600px) {
+      .hero h2 { font-size: 1.4rem; }
+      .hero p { font-size: 1rem; padding: 0 1rem; }
+      .cta-button { font-size: 1rem; padding: 0.8rem 1.5rem; }
+      .catalogo { grid-template-columns: 1fr; padding: 1rem; }
+      .producto img { width: 90%; }
+    }
   </style>
   <script>
     let unidades = 5;
@@ -166,6 +173,7 @@
     <div class="timer" id="timer"></div>
   </section>
 
+  <h2 style="text-align:center; color:#FFA500; margin-top:2rem;">⚠️ No garantizamos stock para mañana</h2>
   <section class="catalogo">
     <div class="producto">
       <img src="producto1.jpg" alt="iARS Pods Galaxy">
@@ -217,6 +225,7 @@
   </a>
 </body>
 </html>
+
 
 
 
