@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>iARS | Tu mundo. Tu ritmo.</title>
+  <title>🔥 iARS | Edición Limitada – Tu mundo. Tu ritmo.</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="/favicon.png">
   <style>
     body {
       margin: 0;
@@ -15,101 +16,89 @@
     }
     header {
       background-color: #000;
-      padding: 2rem;
+      padding: 1.5rem;
       text-align: center;
       border-bottom: 1px solid #222;
     }
     header h1 {
-      font-size: 2.8rem;
+      font-size: 2.5rem;
       color: #FFA500;
+      margin: 0;
     }
-    .video-section {
+    .hero {
+      padding: 3rem 1rem 2rem;
       text-align: center;
-      margin: 2rem 0;
+    }
+    .hero h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #fff;
+    }
+    .hero p {
+      font-size: 1.1rem;
+      color: #bbb;
+      max-width: 700px;
+      margin: 0 auto 2rem;
     }
     .cta-button {
       margin-top: 1rem;
-      padding: 1rem 2.5rem;
-      font-size: 1.3rem;
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
       background-color: #FFA500;
       color: #000;
       border: none;
       cursor: pointer;
-      border-radius: 12px;
-      box-shadow: 0 0 15px #FFA50055;
+      border-radius: 1rem;
+      box-shadow: 0 0 12px #FFA50066;
       transition: transform 0.2s ease, box-shadow 0.3s ease;
     }
     .cta-button:hover {
-      transform: scale(1.07);
-      box-shadow: 0 0 25px #FFA500aa;
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #FFA500aa;
     }
-    .urgency-counter {
-      font-size: 1.5rem;
-      margin: 1.5rem 0;
+    .urgency-counter, .timer {
+      text-align: center;
+      font-size: 1.4rem;
       color: red;
+      margin: 1rem 0;
       animation: pulse 1.5s infinite;
     }
     @keyframes pulse {
       0%, 100% { opacity: 1; }
-      50% { opacity: 0.6; }
+      50% { opacity: 0.5; }
     }
     .catalogo {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
       padding: 2rem;
     }
     .producto {
-      background-color: #111;
+      background: #111;
       border-radius: 1rem;
-      padding: 1rem;
       text-align: center;
-      transition: transform 0.3s;
-    }
-    .producto:hover {
-      transform: scale(1.02);
+      padding: 1rem;
+      box-shadow: 0 0 12px #111;
     }
     .producto img {
-      max-width: 100%;
-      border-radius: 1rem;
+      width: 100%;
+      border-radius: 0.8rem;
     }
     .producto h3 {
+      color: #FFA500;
       margin: 0.5rem 0;
     }
     .producto p {
       color: #ccc;
     }
     .producto button {
-      margin-top: 0.5rem;
       background-color: #FFA500;
       color: #000;
-      border: none;
       padding: 0.6rem 1.2rem;
+      border: none;
       border-radius: 0.5rem;
+      margin-top: 0.5rem;
       cursor: pointer;
-    }
-    .testimonios {
-      display: flex;
-      flex-wrap: nowrap;
-      overflow-x: auto;
-      gap: 1rem;
-      padding: 2rem 1rem;
-      scroll-snap-type: x mandatory;
-    }
-    .testimonial {
-      background: #111;
-      border-radius: 1rem;
-      padding: 1rem;
-      min-width: 280px;
-      text-align: center;
-      scroll-snap-align: center;
-      flex-shrink: 0;
-    }
-    .testimonial img {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      object-fit: cover;
     }
     .formulario {
       max-width: 400px;
@@ -131,17 +120,36 @@
       font-weight: bold;
       cursor: pointer;
     }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #111;
+      font-size: 0.9rem;
+      color: #888;
+    }
   </style>
   <script>
-    let unidades = 7;
+    let unidades = 5;
     function actualizarContador() {
-      const counter = document.getElementById('contador');
+      const contador = document.getElementById('contador');
       if (unidades > 0) {
         unidades--;
-        counter.innerText = `🔥 Solo ${unidades} unidades disponibles hoy`;
+        contador.innerText = `🚨 Solo ${unidades} unidades disponibles hoy`;
       }
     }
     setInterval(actualizarContador, 15000);
+
+    function iniciarTemporizador() {
+      const timer = document.getElementById('timer');
+      let tiempo = 600;
+      setInterval(() => {
+        const min = Math.floor(tiempo / 60);
+        const seg = tiempo % 60;
+        timer.innerText = `⏳ Oferta termina en: ${min}:${seg < 10 ? '0' : ''}${seg}`;
+        if (tiempo > 0) tiempo--;
+      }, 1000);
+    }
+    window.onload = iniciarTemporizador;
   </script>
 </head>
 <body>
@@ -149,70 +157,52 @@
     <h1>iARS | Tu mundo. Tu ritmo.</h1>
   </header>
 
-  <section class="video-section">
-    <video width="320" controls poster="https://via.placeholder.com/320x180">
-      <source src="media/iarspromo.mp4" type="video/mp4">
-      Tu navegador no soporta video.
-    </video>
-    <div class="urgency-counter" id="contador">🔥 Solo 7 unidades disponibles hoy</div>
-    <button class="cta-button" onclick="window.open('https://wa.me/51966885672','_blank')">¡Separar ahora!</button>
+  <section class="hero">
+    <h2>🎧 La experiencia sonora que está cambiando Lima</h2>
+    <p>Edición limitada. Tecnología estilo Apple, con precios limeños. Si parpadeas, te los quitan.</p>
+    <button class="cta-button" onclick="window.open('https://wa.me/51966885672?text=Hola,%20quiero%20aprovechar%20la%20oferta%20de%20iARS','_blank')">¡Lo quiero YA!</button>
+    <div class="urgency-counter" id="contador">🚨 Solo 5 unidades disponibles hoy</div>
+    <div class="timer" id="timer"></div>
   </section>
 
   <section class="catalogo">
     <div class="producto">
-      <img src="https://via.placeholder.com/200" alt="iARS Pods Pro">
-      <h3>iARS Pods Pro</h3>
-      <p>De S/139 a <strong>S/89</strong></p>
-      <button onclick="window.open('https://wa.me/51966885672','_blank')">Comprar</button>
+      <img src="producto1.jpg" alt="iARS Pods Galaxy">
+      <h3>iARS Pods Galaxy</h3>
+      <p>De S/199 a <strong>S/139</strong></p>
+      <button onclick="window.open('https://wa.me/51966885672?text=Hola,%20quiero%20los%20Pods%20Galaxy','_blank')">Separar por WhatsApp</button>
     </div>
     <div class="producto">
-      <img src="https://via.placeholder.com/200" alt="Smartwatch Fit">
-      <h3>Smartwatch Fit</h3>
-      <p>De S/199 a <strong>S/119</strong></p>
-      <button onclick="window.open('https://wa.me/51966885672','_blank')">Comprar</button>
+      <img src="producto2.jpg" alt="iARS Watch Pro">
+      <h3>iARS Watch Pro</h3>
+      <p>De S/249 a <strong>S/169</strong></p>
+      <button onclick="window.open('https://wa.me/51966885672?text=Hola,%20quiero%20el%20Watch%20Pro','_blank')">Separar por WhatsApp</button>
     </div>
-    <div class="producto">
-      <img src="https://via.placeholder.com/200" alt="Combo Auris + Watch">
-      <h3>Combo Auris + Watch</h3>
-      <p>De S/289 a <strong>S/199</strong></p>
-      <button onclick="window.open('https://wa.me/51966885672','_blank')">Comprar</button>
-    </div>
-    <div class="producto">
-      <img src="https://via.placeholder.com/200" alt="Cargador Magnético">
-      <h3>Cargador Magnético</h3>
-      <p>De S/79 a <strong>S/49</strong></p>
-      <button onclick="window.open('https://wa.me/51966885672','_blank')">Comprar</button>
-    </div>
-    <div class="producto">
-      <img src="https://via.placeholder.com/200" alt="Mini Speaker Bluetooth">
-      <h3>Mini Speaker Bluetooth</h3>
-      <p>De S/99 a <strong>S/69</strong></p>
-      <button onclick="window.open('https://wa.me/51966885672','_blank')">Comprar</button>
-    </div>
-    <div class="producto">
-      <img src="https://via.placeholder.com/200" alt="iARS Pods Touch Pantalla">
-      <h3>iARS Pods Touch Pantalla</h3>
-      <p>De S/149 a <strong>S/99</strong></p>
-      <button onclick="window.open('https://wa.me/51966885672','_blank')">Comprar</button>
-    </div>
-  </section>
-
-  <section class="testimonios">
-    <div class="testimonial">
-      <img src="https://i.pravatar.cc/60?u=1" alt="Cliente 1">
-      <p>“¡Los iARS son otro level! Me aislan del mundo y suenan brutal.” ⭐⭐⭐⭐⭐</p>
-    </div>
-    <div class="testimonial">
-      <img src="https://i.pravatar.cc/60?u=2" alt="Cliente 2">
-      <p>“Me llegaron en 24 horas y funcionan de locos. Recomendado al 100%.” ⭐⭐⭐⭐⭐</p>
-    </div>
+    <!-- 🔥 Agrega más productos aquí duplicando el bloque .producto -->
   </section>
 
   <section class="formulario">
     <input type="text" placeholder="Nombre">
     <input type="tel" placeholder="WhatsApp">
     <input type="text" placeholder="Producto de interés">
-    <button onclick="window.open('https://wa.me/51966885672','_blank')">Enviar por WhatsApp</button>
+    <button onclick="window.open('https://wa.me/51966885672?text=Hola,%20me%20interesa%20iARS','_blank')">Enviar por WhatsApp</button>
   </section>
+
+  <section class="yape" style="text-align:center; padding:2rem 1rem;">
+  <h2 style="color:#FFA500;">¿Prefieres pagar por Yape?</h2>
+  <p>Escanea este código QR y envíanos el comprobante por WhatsApp:</p>
+  <img src="yapeqr.jpg" alt="Código QR de Yape" style="max-width:200px; border-radius:12px; margin-top:1rem;">
+</section>
+
+<footer>
+  Edición limitada | Entrega en 24h Lima | Pago por Yape / Contra entrega<br>
+  iARS 2025 © Todos los derechos reservados
+</footer>
+<!-- Botón flotante de urgencia -->
+  <a href="https://wa.me/51966885672?text=Hola,%20quiero%20aprovechar%20la%20oferta%20de%20iARS" target="_blank" style="position: fixed; bottom: 20px; right: 20px; background-color: #FFA500; color: #000; padding: 1rem 1.5rem; border-radius: 2rem; box-shadow: 0 0 20px #FFA50088; font-weight: bold; text-decoration: none; z-index: 999; animation: pulse 1.5s infinite;">
+    🔥 ¡Últimas unidades!
+  </a>
 </body>
 </html>
+
+
