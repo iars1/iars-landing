@@ -5,29 +5,52 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>🔥 iARS | Edición Limitada – Tu mundo. Tu ritmo.</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="/favicon.png" sizes="32x32">
-  <meta property="og:title" content="iARS | Tu mundo. Tu ritmo.">
-  <meta property="og:description" content="Audífonos, smartwatches y gadgets edición limitada. Compra directa por WhatsApp o Yape.">
-  <meta property="og:image" content="https://iarstech.com/oferta-destacada.jpg">
-  <meta property="og:url" content="https://iarstech.com">
-  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" href="favicon.png">
   <style>
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
       background-color: #000;
       color: #fff;
-      scroll-behavior: smooth;
     }
-    header, .hero, .catalogo, .formulario, footer, section {
+    .container {
       max-width: 1200px;
       margin: auto;
+      padding: 2rem;
+    }
+    .hero {
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+    .hero img {
+      max-width: 250px;
+      border: 2px solid #FFA500;
+      border-radius: 1rem;
+      padding: 0.5rem;
+      box-shadow: 0 0 20px #FFA50055;
+    }
+    .cta-button {
+      padding: 1rem 2rem;
+      font-size: 1.1rem;
+      background: #FFA500;
+      color: #000;
+      border: none;
+      border-radius: 1rem;
+      box-shadow: 0 0 12px #FFA50088;
+      cursor: pointer;
+    }
+    .urgency-counter, .timer {
+      font-size: 1.2rem;
+      margin: 1rem 0;
+      color: red;
+      font-weight: bold;
+      text-align: center;
     }
     .catalogo {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 2rem;
-      padding: 2rem;
+      padding: 2rem 0;
     }
     .producto {
       background: #111;
@@ -56,14 +79,6 @@
       margin-top: 0.5rem;
       cursor: pointer;
     }
-    .yape {
-      text-align: center;
-      margin: 3rem auto;
-    }
-    .yape img {
-      max-width: 250px;
-      border-radius: 1rem;
-    }
     footer {
       text-align: center;
       padding: 2rem;
@@ -74,101 +89,56 @@
   </style>
 </head>
 <body>
-  <section class="hero" style="text-align: center; padding: 3rem 1rem; background: #000; color: #fff;">
-    <div style="margin-bottom: 1.5rem;">
-      <img src="producto1.jpg" alt="2x AirPods Pro 2" style="max-width: 250px; border: 2px solid #FFA500; border-radius: 1rem; padding: 0.5rem; box-shadow: 0 0 20px #FFA50055;">
-      <p style="margin-top: 0.5rem; font-weight: bold; color: #FFA500;">
-        2x AirPods Pro 2<br>
-        <span style="color: #ccc; font-weight: normal;">S/264 | Edición Flash 🔋</span>
-      </p>
-    </div>
-    <h1 style="font-size: 2rem; font-weight: 800;">
-      🎷 La experiencia sonora que está cambiando Lima
-    </h1>
-    <p style="font-size: 1rem; color: #ccc; margin: 0.5rem auto 1.5rem; max-width: 600px;">
+  <section class="hero">
+    <img src="producto1.jpg" alt="2x AirPods Pro 2">
+    <p style="margin-top: 0.5rem; font-weight: bold; color: #FFA500;">
+      2x AirPods Pro 2<br>
+      <span style="color: #ccc; font-weight: normal;">S/264 | Edición Flash 🔋</span>
+    </p>
+    <h1 style="font-size: 2rem; font-weight: 800;">🎧 La experiencia sonora que está cambiando Lima</h1>
+    <p style="font-size: 1rem; color: #ccc; max-width: 600px; margin: auto;">
       Edición limitada. Tecnología estilo Apple, con precios limeños. Si parpadeas, te los quitan.
     </p>
     <a href="https://wa.me/51966885672?text=Hola,%20quiero%20separar%20los%20Pods%20Galaxy">
-      <button style="padding: 1rem 2rem; font-size: 1.1rem; background: #FFA500; color: #000; border: none; border-radius: 1rem; box-shadow: 0 0 12px #FFA50088; cursor: pointer;">
-        ¡Lo quiero YA!
-      </button>
+      <button class="cta-button">¡Lo quiero YA!</button>
     </a>
-    <div style="margin-top: 1rem;">
-      <p style="color: red; font-weight: bold; font-size: 1.1rem;">👑 Solo 0 unidades disponibles hoy</p>
-      <p style="color: #f00; font-weight: bold; font-size: 1.1rem;">⏳ Oferta termina en: 6:12</p>
-    </div>
+    <div class="urgency-counter">👑 Solo 0 unidades disponibles hoy</div>
+    <div class="timer">⏳ Oferta termina en: 6:12</div>
   </section>
 
-  <section class="catalogo">
-    <h2 style="color:#FFA500; font-size: 1.4rem; margin-bottom: 2rem; text-align:center;">⚠️ No garantizamos stock para mañana</h2>
-
-    <!-- Espacio para 5 nuevos productos -->
-    <div class="producto"><img src="producto6.jpg" alt="Producto 6"><h3>Producto 6</h3><p>S/XXX</p><button>Separar por WhatsApp</button></div>
-    <div class="producto"><img src="producto7.jpg" alt="Producto 7"><h3>Producto 7</h3><p>S/XXX</p><button>Separar por WhatsApp</button></div>
-    <div class="producto"><img src="producto8.jpg" alt="Producto 8"><h3>Producto 8</h3><p>S/XXX</p><button>Separar por WhatsApp</button></div>
-    <div class="producto"><img src="producto9.jpg" alt="Producto 9"><h3>Producto 9</h3><p>S/XXX</p><button>Separar por WhatsApp</button></div>
-    <div class="producto"><img src="producto10.jpg" alt="Producto 10"><h3>Producto 10</h3><p>S/XXX</p><button>Separar por WhatsApp</button></div>
-  </section>
-
-  <section class="catalogo">
-    <!-- Productos actuales -->
+  <section class="catalogo container">
     <div class="producto">
       <img src="producto1.jpg" alt="iARS Pods Galaxy">
       <h3>iARS Pods Galaxy</h3>
       <p>De S/199 a <strong>S/139</strong></p>
-      <ul style="text-align:left;">
-        <li>Audio envolvente de alta fidelidad</li>
-        <li>Cancelación activa de ruido</li>
-        <li>Conexión automática y carga rápida</li>
-      </ul>
-      <button>Separar por WhatsApp</button>
     </div>
     <div class="producto">
       <img src="producto2_mejorado.jpg" alt="iARS Watch Pro">
       <h3>iARS Watch Pro</h3>
       <p>De S/249 a <strong>S/169</strong></p>
-      <ul style="text-align:left;">
-        <li>Monitor de ritmo cardíaco y sueño</li>
-        <li>Resistente al agua y al sudor</li>
-        <li>Compatible con Android y iOS</li>
-      </ul>
-      <button>Separar por WhatsApp</button>
     </div>
     <div class="producto">
       <img src="producto3.jpg" alt="iARS Mini Speaker">
       <h3>iARS Mini Speaker</h3>
       <p>De S/129 a <strong>S/89</strong></p>
-      <ul style="text-align:left;">
-        <li>Sonido potente en tamaño compacto</li>
-        <li>Conexión Bluetooth 5.0</li>
-        <li>Batería de larga duración</li>
-      </ul>
-      <button>Separar por WhatsApp</button>
     </div>
     <div class="producto">
       <img src="producto4.jpg" alt="iARS Cargador Magnético">
       <h3>iARS Cargador Magnético</h3>
       <p>De S/99 a <strong>S/69</strong></p>
-      <ul style="text-align:left;">
-        <li>Carga inalámbrica rápida</li>
-        <li>Diseño compacto y elegante</li>
-        <li>Ideal para viajes y oficina</li>
-      </ul>
-      <button>Separar por WhatsApp</button>
     </div>
     <div class="producto">
       <img src="producto5.jpg" alt="iARS TWS con Pantalla">
       <h3>iARS TWS con Pantalla</h3>
       <p>De S/149 a <strong>S/99</strong></p>
-      <button>Separar por WhatsApp</button>
     </div>
   </section>
 
-  <section class="yape">
+  <section class="container" style="text-align: center;">
     <h2 style="color: #FFA500;">¿Prefieres pagar por Yape?</h2>
     <p>Escanea este código QR y envíanos el comprobante por WhatsApp:</p>
-    <img src="yapeqr.jpg" alt="QR Yape" />
-    <p style="margin-top: 1rem; font-size: 0.9rem; color: #aaa;">Luis Fernando Soto Maxe</p>
+    <img src="yapeqr.jpg" alt="QR Yape" style="max-width: 250px; border-radius: 1rem;">
+    <p style="color: #aaa; font-size: 0.9rem;">Luis Fernando Soto Maxe</p>
   </section>
 
   <footer>
@@ -177,23 +147,3 @@
   </footer>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
