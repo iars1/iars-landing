@@ -1,169 +1,58 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>🔥 iARS | Edición Limitada – Tu mundo. Tu ritmo.</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="/favicon.png" sizes="32x32">
-  <meta property="og:title" content="iARS | Tu mundo. Tu ritmo.">
-  <meta property="og:description" content="Audífonos, smartwatches y gadgets edición limitada. Compra directa por WhatsApp o Yape.">
-  <meta property="og:image" content="https://iarstech.com/oferta-destacada.jpg">
-  <meta property="og:url" content="https://iarstech.com">
-  <meta name="twitter:card" content="summary_large_image">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background-color: #000;
-      color: #fff;
-      scroll-behavior: smooth;
-    }
-    header {
-      background-color: #000;
-      padding: 1.5rem;
-      text-align: center;
-      border-bottom: 1px solid #222;
-    }
-    header h1 {
-      font-size: 2.5rem;
-      color: #FFA500;
-      margin: 0;
-    }
-    .hero {
-      padding: 3rem 1rem 2rem;
-      text-align: center;
-    }
-    .hero h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      color: #fff;
-    }
-    .hero p {
-      font-size: 1.1rem;
-      color: #bbb;
-      max-width: 700px;
-      margin: 0 auto 2rem;
-    }
-    .cta-button {
-      margin-top: 1rem;
-      padding: 1rem 2rem;
-      font-size: 1.2rem;
-      background-color: #FFA500;
-      color: #000;
-      border: none;
-      cursor: pointer;
-      border-radius: 1rem;
-      box-shadow: 0 0 12px #FFA50066;
-      transition: transform 0.2s ease, box-shadow 0.3s ease;
-    }
-    .cta-button:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 20px #FFA500aa;
-    }
-    .urgency-counter, .timer {
-      text-align: center;
-      font-size: 1.4rem;
-      color: red;
-      margin: 1rem 0;
-      animation: pulse 1.5s infinite;
-    }
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.5; }
-    }
-    .catalogo {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      padding: 2rem;
-    }
-    .producto {
-      background: #111;
-      border-radius: 1rem;
-      text-align: center;
-      padding: 1rem;
-      box-shadow: 0 0 12px #111;
-    }
-    .producto img {
-      width: 100%;
-      border-radius: 0.8rem;
-    }
-    .producto h3 {
-      color: #FFA500;
-      margin: 0.5rem 0;
-    }
-    .producto p {
-      color: #ccc;
-    }
-    .producto button {
-      background-color: #FFA500;
-      color: #000;
-      padding: 0.6rem 1.2rem;
-      border: none;
-      border-radius: 0.5rem;
-      margin-top: 0.5rem;
-      cursor: pointer;
-    }
-    .formulario {
-      max-width: 400px;
-      margin: 2rem auto;
-      padding: 1rem;
-      background: #111;
-      border-radius: 1rem;
-    }
-    .formulario input, .formulario button {
-      width: 100%;
-      margin-bottom: 1rem;
-      padding: 0.75rem;
-      border-radius: 0.5rem;
-      border: none;
-    }
-    .formulario button {
-      background-color: #FFA500;
-      color: #000;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background: #111;
-      font-size: 0.9rem;
-      color: #888;
-    }
-    @media screen and (max-width: 600px) {
-      .hero h2 { font-size: 1.4rem; }
-      .hero p { font-size: 1rem; padding: 0 1rem; }
-      .cta-button { font-size: 1rem; padding: 0.8rem 1.5rem; }
-      .catalogo { grid-template-columns: 1fr; padding: 1rem; }
-      .producto img { width: 90%; }
-    }
-  </style>
-  <script>
-    let unidades = 5;
-    function actualizarContador() {
-      const contador = document.getElementById('contador');
-      if (unidades > 0) {
-        unidades--;
-        contador.innerText = `🚨 Solo ${unidades} unidades disponibles hoy`;
-      }
-    }
-    setInterval(actualizarContador, 15000);
-
-    function iniciarTemporizador() {
-      const timer = document.getElementById('timer');
-      let tiempo = 600;
-      setInterval(() => {
-        const min = Math.floor(tiempo / 60);
-        const seg = tiempo % 60;
-        timer.innerText = `⏳ Oferta termina en: ${min}:${seg < 10 ? '0' : ''}${seg}`;
-        if (tiempo > 0) tiempo--;
-      }, 1000);
-    }
-    window.onload = iniciarTemporizador;
-  </script>
+  <!-- ... (todo tu <head> actual intacto) ... -->
 </head>
+<body>
+  <header>
+    <h1>iARS - Tu mundo. Tu ritmo.</h1>
+  </header>
+
+  <section class="hero">
+    <h2>¡Edición Limitada Disponible!</h2>
+    <p>Audífonos inteligentes, smartwatches y gadgets con estilo para ti. Compra directa por WhatsApp o Yape.</p>
+    <div id="contador" class="urgency-counter">🚨 Solo 5 unidades disponibles hoy</div>
+    <div id="timer" class="timer">⏳ Oferta termina en: 10:00</div>
+    <a href="https://wa.me/51966885672?text=Hola%2C%20quiero%20separar%20mis%20iARS%20edition%20limitada" target="_blank">
+      <button class="cta-button">¡Separar por WhatsApp!</button>
+    </a>
+  </section>
+
+  <section class="catalogo">
+    <div class="producto">
+      <img src="https://iarstech.com/img/iarspods.jpg" alt="iARS Pods Pro">
+      <h3>iARS Pods Pro</h3>
+      <p>Cancelación de ruido, chip inteligente, calidad premium.</p>
+      <button>Reservar</button>
+    </div>
+    <div class="producto">
+      <img src="https://iarstech.com/img/smartwatch.jpg" alt="Smartwatch Ultra 7">
+      <h3>Smartwatch Ultra 7</h3>
+      <p>Incluye 7 correas, monitoreo completo, pantalla retina.</p>
+      <button>Reservar</button>
+    </div>
+  </section>
+
+  <section class="formulario">
+    <form action="https://formspree.io/f/your-form-id" method="POST">
+      <input type="text" name="nombre" placeholder="Tu nombre" required>
+      <input type="email" name="correo" placeholder="Tu correo" required>
+      <button type="submit">Recibir Oferta Exclusiva</button>
+    </form>
+  </section>
+
+  <footer>
+    © 2025 iARS. Todos los derechos reservados.<br>
+    Desarrollado con pasión desde Perú.
+  </footer>
+
+  <!-- WhatsApp flotante -->
+  <a href="https://wa.me/51966885672?text=Hola%2C%20quiero%20separar%20mis%20iARS%20edition%20limitada" target="_blank"
+     style="position:fixed;bottom:20px;right:20px;background:#25d366;color:#fff;padding:12px 18px;border-radius:30px;text-decoration:none;box-shadow:0 0 10px #25d366;z-index:999;">
+    💬 Escríbenos por WhatsApp
+  </a>
+</body>
+</html>
 
 
 
