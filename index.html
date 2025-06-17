@@ -251,21 +251,26 @@
       observer.observe(el);
     });
 
-    let time = 300;
-    const countdown = document.getElementById('countdown');
-    const stickyTimer = document.getElementById('stickyTimer');
-    function updateCountdown() {
-      const minutes = Math.floor(time / 60);
-      const seconds = time % 60;
-      countdown.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
-      countdown.style.color = time <= 60 ? 'red' : '#00ff00';
-      stickyTimer.style.animationName = time <= 60 ? 'pulseRed' : 'pulseGreen';
-      if (time > 0) time--;
+    window.onload = function() {
+      let time = 300;
+      const countdown = document.getElementById('countdown');
+      const stickyTimer = document.getElementById('stickyTimer');
+
+      function updateCountdown() {
+        const minutes = Math.floor(time / 60);
+        const seconds = time % 60;
+        countdown.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+        countdown.style.color = time <= 60 ? 'red' : '#00ff00';
+        stickyTimer.style.animationName = time <= 60 ? 'pulseRed' : 'pulseGreen';
+        if (time > 0) time--;
+      }
+
+      setInterval(updateCountdown, 1000);
     }
-    setInterval(updateCountdown, 1000);
   </script>
 </body>
 </html>
+
 
 
 
