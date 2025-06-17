@@ -1,7 +1,78 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <!-- ... (todo tu <head> actual intacto) ... -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🔥 iARS | Edición Limitada – Tu mundo. Tu ritmo.</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="/favicon.png" sizes="32x32">
+  <meta property="og:title" content="iARS | Tu mundo. Tu ritmo.">
+  <meta property="og:description" content="Audífonos, smartwatches y gadgets edición limitada. Compra directa por WhatsApp o Yape.">
+  <meta property="og:image" content="https://iarstech.com/oferta-destacada.jpg">
+  <meta property="og:url" content="https://iarstech.com">
+  <meta name="twitter:card" content="summary_large_image">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #000;
+      color: #fff;
+      scroll-behavior: smooth;
+    }
+    header, .hero, .catalogo, .formulario, footer, section {
+      max-width: 1200px;
+      margin: auto;
+    }
+    .catalogo {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+    }
+    .producto {
+      background: #111;
+      border-radius: 1rem;
+      text-align: center;
+      padding: 1rem;
+      box-shadow: 0 0 12px #111;
+    }
+    .producto img {
+      width: 100%;
+      border-radius: 0.8rem;
+    }
+    .producto h3 {
+      color: #FFA500;
+      margin: 0.5rem 0;
+    }
+    .producto p {
+      color: #ccc;
+    }
+    .producto button {
+      background-color: #FFA500;
+      color: #000;
+      padding: 0.6rem 1.2rem;
+      border: none;
+      border-radius: 0.5rem;
+      margin-top: 0.5rem;
+      cursor: pointer;
+    }
+    .yape {
+      text-align: center;
+      margin: 3rem auto;
+    }
+    .yape img {
+      max-width: 250px;
+      border-radius: 1rem;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      background-color: #111;
+      color: #888;
+    }
+  </style>
 </head>
 <body>
   <section class="hero" style="text-align: center; padding: 3rem 1rem; background: #000; color: #fff;">
@@ -12,163 +83,52 @@
         <span style="color: #ccc; font-weight: normal;">S/264 | Edición Flash 🔋</span>
       </p>
     </div>
-
     <h1 style="font-size: 2rem; font-weight: 800;">
       🎧 La experiencia sonora que está cambiando Lima
     </h1>
     <p style="font-size: 1rem; color: #ccc; margin: 0.5rem auto 1.5rem; max-width: 600px;">
       Edición limitada. Tecnología estilo Apple, con precios limeños. Si parpadeas, te los quitan.
     </p>
-
     <a href="https://wa.me/51966885672?text=Hola,%20quiero%20separar%20los%20Pods%20Galaxy">
       <button style="padding: 1rem 2rem; font-size: 1.1rem; background: #FFA500; color: #000; border: none; border-radius: 1rem; box-shadow: 0 0 12px #FFA50088; cursor: pointer;">
         ¡Lo quiero YA!
       </button>
     </a>
-
     <div style="margin-top: 1rem;">
       <p style="color: red; font-weight: bold; font-size: 1.1rem;">👑 Solo 0 unidades disponibles hoy</p>
       <p style="color: #f00; font-weight: bold; font-size: 1.1rem;">⏳ Oferta termina en: 6:12</p>
     </div>
   </section>
 
-  <!-- (Resto de tu código intacto después de esta sección hero) -->
-  <section class="catalogo" style="padding: 2rem 1rem; text-align:center; background:#000;">
-  <h2 style="color:#FFA500; font-size: 1.4rem; margin-bottom: 2rem;">⚠️ No garantizamos stock para mañana</h2>
-  <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center;">
-    <div style="background:#111; padding:1.5rem; border-radius:1rem; width:250px; color:#fff;">
-      <img src="https://iarstech.com/img/pods-galaxy.jpg" alt="iARS Pods Galaxy" style="width:100%; border-radius:0.8rem;">
-      <h3 style="color:#FFA500; margin:0.5rem 0;">iARS Pods Galaxy</h3>
-      <p><del>De S/199</del> a <strong>S/139</strong></p>
-      <ul style="text-align:left; color:#ccc; padding-left: 1rem;">
+  <section class="catalogo">
+    <h2 style="color:#FFA500; font-size: 1.4rem; margin-bottom: 2rem; text-align:center;">⚠️ No garantizamos stock para mañana</h2>
+    <div class="producto">
+      <img src="https://iarstech.com/img/pods-galaxy.jpg" alt="iARS Pods Galaxy" />
+      <h3>iARS Pods Galaxy</h3>
+      <p>De S/199 a <strong>S/139</strong></p>
+      <ul style="text-align:left;">
         <li>Audio envolvente de alta fidelidad</li>
         <li>Cancelación activa de ruido</li>
         <li>Conexión automática y carga rápida</li>
       </ul>
-      <a href="https://wa.me/51966885672?text=Hola,%20quiero%20separar%20los%20Pods%20Galaxy">
-        <button style="background-color: #FFA500; color: #000; padding: 0.6rem 1.2rem; border: none; border-radius: 0.5rem; margin-top: 0.5rem; cursor: pointer;">Separar por WhatsApp</button>
-      </a>
+      <button>Separar por WhatsApp</button>
     </div>
-    <div style="background:#111; padding:1.5rem; border-radius:1rem; width:250px; color:#fff;">
-      <img src="https://iarstech.com/img/watch-pro.jpg" alt="iARS Watch Pro" style="width:100%; border-radius:0.8rem;">
-      <h3 style="color:#FFA500; margin:0.5rem 0;">iARS Watch Pro</h3>
-      <p><del>De S/249</del> a <strong>S/169</strong></p>
-      <ul style="text-align:left; color:#ccc; padding-left: 1rem;">
-        <li>Monitor de ritmo cardíaco y sueño</li>
-        <li>Resistente al agua y al sudor</li>
-        <li>Compatible con Android y iOS</li>
-      </ul>
-      <a href="https://wa.me/51966885672?text=Hola,%20quiero%20separar%20el%20Watch%20Pro">
-        <button style="background-color: #FFA500; color: #000; padding: 0.6rem 1.2rem; border: none; border-radius: 0.5rem; margin-top: 0.5rem; cursor: pointer;">Separar por WhatsApp</button>
-      </a>
-    </div>
-    <div style="background:#111; padding:1.5rem; border-radius:1rem; width:250px; color:#fff;">
-      <img src="https://iarstech.com/img/mini-speaker.jpg" alt="iARS Mini Speaker" style="width:100%; border-radius:0.8rem;">
-      <h3 style="color:#FFA500; margin:0.5rem 0;">iARS Mini Speaker</h3>
-      <p><del>De S/129</del> a <strong>S/89</strong></p>
-      <ul style="text-align:left; color:#ccc; padding-left: 1rem;">
-        <li>Sonido potente en tamaño compacto</li>
-        <li>Conexión Bluetooth 5.0</li>
-        <li>Batería de larga duración</li>
-      </ul>
-      <a href="https://wa.me/51966885672?text=Hola,%20quiero%20separar%20el%20Mini%20Speaker">
-        <button style="background-color: #FFA500; color: #000; padding: 0.6rem 1.2rem; border: none; border-radius: 0.5rem; margin-top: 0.5rem; cursor: pointer;">Separar por WhatsApp</button>
-      </a>
-    </div>
-    <div style="background:#111; padding:1.5rem; border-radius:1rem; width:250px; color:#fff;">
-      <img src="https://iarstech.com/img/cargador-magnetico.jpg" alt="iARS Cargador Magnético" style="width:100%; border-radius:0.8rem;">
-      <h3 style="color:#FFA500; margin:0.5rem 0;">iARS Cargador Magnético</h3>
-      <p><del>De S/99</del> a <strong>S/69</strong></p>
-      <ul style="text-align:left; color:#ccc; padding-left: 1rem;">
-        <li>Carga inalámbrica rápida</li>
-        <li>Diseño compacto y elegante</li>
-        <li>Ideal para viajes y oficina</li>
-      </ul>
-      <a href="https://wa.me/51966885672?text=Hola,%20quiero%20separar%20el%20Cargador%20Magnético">
-        <button style="background-color: #FFA500; color: #000; padding: 0.6rem 1.2rem; border: none; border-radius: 0.5rem; margin-top: 0.5rem; cursor: pointer;">Separar por WhatsApp</button>
-      </a>
-    </div>
-    <div style="background:#111; padding:1.5rem; border-radius:1rem; width:250px; color:#fff;">
-      <img src="https://iarstech.com/img/tws-pantalla.jpg" alt="iARS TWS con Pantalla" style="width:100%; border-radius:0.8rem;">
-      <h3 style="color:#FFA500; margin:0.5rem 0;">iARS TWS con Pantalla</h3>
-      <p><del>De S/149</del> a <strong>S/99</strong></p>
-      <a href="https://wa.me/51966885672?text=Hola,%20quiero%20separar%20los%20TWS%20con%20pantalla">
-        <button style="background-color: #FFA500; color: #000; padding: 0.6rem 1.2rem; border: none; border-radius: 0.5rem; margin-top: 0.5rem; cursor: pointer;">Separar por WhatsApp</button>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- Testimonios -->
-<section style="background:#111; padding: 3rem 1rem; text-align:center; color:#fff;">
-  <h2 style="color:#FFA500; margin-bottom:2rem;">Lo que dicen nuestros clientes</h2>
-  <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:1.5rem;">
-    <div style="background:#000; padding:1.5rem; border-radius:1rem; max-width:260px;">
-      <h3 style="color:#FFA500;">Laura – Surco</h3>
-      <p>“Me llegaron súper rápido y la calidad increíble, totalmente recomendados.”</p>
-      <p>⭐️⭐️⭐️⭐️⭐️</p>
-    </div>
-    <div style="background:#000; padding:1.5rem; border-radius:1rem; max-width:260px;">
-      <h3 style="color:#FFA500;">Carlos – San Borja</h3>
-      <p>“Pensé que era floro, pero llegaron el mismo día. Están brutales.”</p>
-      <p>⭐️⭐️⭐️⭐️⭐️</p>
-    </div>
-    <div style="background:#000; padding:1.5rem; border-radius:1rem; max-width:260px;">
-      <h3 style="color:#FFA500;">Fiorella – Chorrillos</h3>
-      <p>“El regalo perfecto para mi hermano. Llegó con bolsita y todo. Lo amó.”</p>
-      <p>⭐️⭐️⭐️⭐️⭐️</p>
-    </div>
-    <div style="background:#000; padding:1.5rem; border-radius:1rem; max-width:260px;">
-      <h3 style="color:#FFA500;">Joel – La Molina</h3>
-      <p>“Pensé que eran réplica pero suenan mejor que los que tenía. Recomendado.”</p>
-      <p>⭐️⭐️⭐️⭐️⭐️</p>
-    </div>
-  </div>
-</section>
-
-<!-- Pago por Yape -->
-<section style="background:#000; padding: 2rem 1rem; text-align:center;">
-  <h2 style="color:#FFA500;">¿Prefieres pagar por Yape?</h2>
-  <p style="color:#fff; margin-bottom: 1rem;">Escanea este código QR y envíanos el comprobante por WhatsApp:</p>
-  <img src="https://iarstech.com/img/yapeqr.jpg" alt="Código QR Yape" style="max-width:200px; border-radius:1rem;">
-</section>
-<section style="background:#000; padding: 2rem 1rem; text-align:center;">
-  <form onsubmit="enviarWhatsApp(event)" style="max-width:400px;margin:0 auto;background:#111;padding:1.5rem;border-radius:1rem;">
-    <input type="text" id="nombre" placeholder="Nombre" required style="width:100%;margin-bottom:1rem;padding:0.75rem;border:none;border-radius:0.5rem;">
-    <input type="text" id="numero" placeholder="WhatsApp" required style="width:100%;margin-bottom:1rem;padding:0.75rem;border:none;border-radius:0.5rem;">
-    <input type="text" id="producto" placeholder="Producto de interés" required style="width:100%;margin-bottom:1rem;padding:0.75rem;border:none;border-radius:0.5rem;">
-    <button type="submit" style="width:100%;padding:0.8rem;background:#FFA500;color:#000;font-weight:bold;border:none;border-radius:0.5rem;cursor:pointer;">Enviar por WhatsApp</button>
-  </form>
-</section>
-
-<script>
-function enviarWhatsApp(e) {
-  e.preventDefault();
-  const nombre = document.getElementById('nombre').value;
-  const numero = document.getElementById('numero').value;
-  const producto = document.getElementById('producto').value;
-  const mensaje = `Hola, soy ${nombre}. Mi número es ${numero} y estoy interesado en el producto: ${producto}`;
-  const url = `https://wa.me/51966885672?text=${encodeURIComponent(mensaje)}`;
-  window.open(url, '_blank');
-}
-</script>
-
-  <section class="formulario">
-    <!-- ... -->
   </section>
 
-  <footer style="background:#111; text-align:center; padding:1rem; color:#aaa; font-size:0.9rem;">
-  Edición limitada | Entrega en 24h Lima | Pago por Yape / Contra entrega<br>
-  iARS 2025 © Todos los derechos reservados
-</footer>
+  <section class="yape">
+    <h2 style="color: #FFA500;">¿Prefieres pagar por Yape?</h2>
+    <p>Escanea este código QR y envíanos el comprobante por WhatsApp:</p>
+    <img src="https://iarstech.com/img/yapeqr.jpg" alt="QR Yape" />
+    <p style="margin-top: 1rem; font-size: 0.9rem; color: #aaa;">Luis Fernando Soto Maxe</p>
+  </section>
 
-  <!-- WhatsApp flotante -->
-  <a href="https://wa.me/51966885672?text=Hola,%20quiero%20más%20información%20sobre%20los%20productos%20iARS" target="_blank"
-     style="position:fixed;bottom:20px;right:20px;background:#25d366;color:#fff;padding:12px 18px;border-radius:30px;text-decoration:none;box-shadow:0 0 10px #25d366;z-index:999;">
-    💬 Escríbenos por WhatsApp
-  </a>
+  <footer>
+    Edición limitada | Entrega en 24h Lima | Pago por Yape / Contra entrega<br>
+    iARS 2025 © Todos los derechos reservados
+  </footer>
 </body>
 </html>
+
 
 
 
