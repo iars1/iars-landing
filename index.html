@@ -1,175 +1,44 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>🔥 iARS | Edición Limitada – Tu mundo. Tu ritmo.</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="https://iarstech.com/favicon.png">
-  <meta property="og:title" content="iARS | Tu mundo. Tu ritmo.">
-  <meta property="og:description" content="Audífonos, smartwatches y gadgets edición limitada. Compra directa por WhatsApp o Yape.">
-  <meta property="og:image" content="https://iarstech.com/oferta-destacada.jpg">
-  <meta property="og:url" content="https://iarstech.com">
-  <meta name="twitter:card" content="summary_large_image">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background-color: #000;
-      color: #fff;
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const countdown = document.getElementById('countdown');
+    const stickyTimer = document.getElementById('stickyTimer');
+    let time = 300;
+
+    function startTimer() {
+      const interval = setInterval(() => {
+        if (time > 0) {
+          const minutes = Math.floor(time / 60);
+          const seconds = time % 60;
+          countdown.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+
+          // Cambiar color y animación
+          if (time <= 60) {
+            countdown.style.color = 'red';
+            stickyTimer.style.animationName = 'pulseRed';
+          } else {
+            countdown.style.color = '#00ff00';
+            stickyTimer.style.animationName = 'pulseGreen';
+          }
+
+          time--;
+        } else {
+          clearInterval(interval);
+          countdown.textContent = "¡Última oportunidad!";
+          countdown.style.color = 'red';
+          stickyTimer.style.animationName = 'pulseRed';
+
+          // Reiniciar después de 10s
+          setTimeout(() => {
+            time = 300;
+            startTimer();
+          }, 10000);
+        }
+      }, 1000);
     }
-    .container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 2rem;
-    }
-    .hero, .producto, .testimonio {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    .animate {
-      animation: fadeInUp 1.3s ease-in-out forwards;
-    }
-    .hero {
-      text-align: center;
-      padding: 3rem 1rem;
-      background: linear-gradient(145deg, #111, #000);
-    }
-    .hero h1.brand-title {
-      font-size: 3rem;
-      font-weight: bold;
-      color: #FFA500;
-      margin-bottom: 1rem;
-    }
-    .hero h2.brand-subtitle {
-      font-size: 1.5rem;
-      color: #fff;
-      margin-bottom: 2rem;
-    }
-    .cta-button {
-      padding: 1rem 2rem;
-      font-size: 1.1rem;
-      background: linear-gradient(45deg, #FFA500, #ffcc00);
-      color: #000;
-      border: none;
-      border-radius: 1rem;
-      box-shadow: 0 0 12px #FFA50088;
-      cursor: pointer;
-      transition: transform 0.3s ease, background 0.3s ease;
-    }
-    .cta-button:hover {
-      transform: scale(1.05);
-      background: linear-gradient(45deg, #ffcc00, #FFA500);
-    }
-    .urgency-counter {
-      font-size: 1.2rem;
-      margin: 1rem 0;
-      color: red;
-      font-weight: bold;
-      text-align: center;
-    }
-    .sticky-timer {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #FFA500;
-      color: #000;
-      padding: 0.6rem 1.2rem;
-      border-radius: 10px;
-      font-weight: bold;
-      box-shadow: 0 0 10px #FFA50099;
-      z-index: 999;
-      font-size: 0.9rem;
-      animation: pulseGreen 1.5s infinite;
-    }
-    .catalogo {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      padding: 2rem;
-    }
-    .producto {
-      background: #111;
-      border-radius: 1rem;
-      text-align: center;
-      padding: 1rem;
-      box-shadow: 0 0 12px #111;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .producto:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 20px #FFA50055;
-    }
-    .producto img {
-      width: 100%;
-      border-radius: 0.8rem;
-    }
-    .producto h3 {
-      color: #FFA500;
-      margin: 0.5rem 0;
-    }
-    .producto p {
-      color: #ccc;
-    }
-    .producto a button {
-      background-color: #FFA500;
-      color: #000;
-      padding: 0.6rem 1.2rem;
-      border: none;
-      border-radius: 0.5rem;
-      margin-top: 0.5rem;
-      cursor: pointer;
-      width: 100%;
-      transition: background 0.2s ease;
-    }
-    .producto a button:hover {
-      background-color: #ffcc00;
-    }
-    .testimonios {
-      background-color: #111;
-      padding: 2rem;
-    }
-    .testimonios h2 {
-      text-align: center;
-      color: #FFA500;
-      margin-bottom: 1.5rem;
-    }
-    .testimonio {
-      background: #1a1a1a;
-      margin: 1rem;
-      padding: 1rem;
-      border-radius: 0.5rem;
-      color: #ccc;
-    }
-    .testimonio strong {
-      color: #FFA500;
-    }
-    .stars {
-      color: gold;
-    }
-    .yape {
-      text-align: center;
-      margin: 3rem auto;
-    }
-    .yape img {
-      max-width: 250px;
-      border-radius: 1rem;
-    }
-    footer {
-      text-align: center;
-      padding: 2rem;
-      font-size: 0.9rem;
-      background-color: #111;
-      color: #888;
-    }
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
+
+    startTimer();
+  });
+</script>
 
         
 
