@@ -108,12 +108,24 @@
     .testimonio span {
       color: gold;
     }
+    .yape {
+      text-align: center;
+      margin: 3rem auto;
+    }
+    .yape img {
+      max-width: 250px;
+      border-radius: 1rem;
+    }
     footer {
       text-align: center;
       padding: 2rem;
       font-size: 0.9rem;
       background-color: #111;
       color: #888;
+    }
+    @media screen and (max-width: 600px) {
+      .cta-button { width: 90%; }
+      .producto button { width: 100%; }
     }
   </style>
 </head>
@@ -132,7 +144,7 @@
       <button class="cta-button">💬 Separar ahora por WhatsApp</button>
     </a>
     <div class="urgency-counter">🔥 Solo 3 unidades disponibles hoy</div>
-    <div class="timer">⏳ Oferta termina en: 6:12</div>
+    <div class="timer" id="countdown">⏳ Oferta termina en: 10:00</div>
   </section>
 
   <section class="catalogo container">
@@ -140,31 +152,31 @@
       <img src="producto1.jpg" alt="iARS Pods Galaxy">
       <h3>iARS Pods Galaxy</h3>
       <p>De S/199 a <strong>S/139</strong></p>
-      <button>Separar por WhatsApp</button>
+      <button>💬 Separar por WhatsApp</button>
     </div>
     <div class="producto">
       <img src="producto2_mejorado.jpg" alt="iARS Watch Pro">
       <h3>iARS Watch Pro</h3>
       <p>De S/249 a <strong>S/169</strong></p>
-      <button>Separar por WhatsApp</button>
+      <button>💬 Separar por WhatsApp</button>
     </div>
     <div class="producto">
       <img src="producto3.jpg" alt="iARS Mini Speaker">
       <h3>iARS Mini Speaker</h3>
       <p>De S/129 a <strong>S/89</strong></p>
-      <button>Separar por WhatsApp</button>
+      <button>💬 Separar por WhatsApp</button>
     </div>
     <div class="producto">
       <img src="producto4.jpg" alt="iARS Cargador Magnético">
       <h3>iARS Cargador Magnético</h3>
       <p>De S/99 a <strong>S/69</strong></p>
-      <button>Separar por WhatsApp</button>
+      <button>💬 Separar por WhatsApp</button>
     </div>
     <div class="producto">
       <img src="producto5.jpg" alt="iARS TWS con Pantalla">
       <h3>iARS TWS con Pantalla</h3>
       <p>De S/149 a <strong>S/99</strong></p>
-      <button>Separar por WhatsApp</button>
+      <button>💬 Separar por WhatsApp</button>
     </div>
   </section>
 
@@ -191,10 +203,10 @@
     </div>
   </section>
 
-  <section class="container" style="text-align: center;">
+  <section class="yape container">
     <h2 style="color: #FFA500;">¿Prefieres pagar por Yape?</h2>
     <p>Escanea este código QR y envíanos el comprobante por WhatsApp:</p>
-    <img src="yapeqr.jpg" alt="QR Yape" style="max-width: 250px; border-radius: 1rem;">
+    <img src="yapeqr.jpg" alt="QR Yape">
     <p style="color: #aaa; font-size: 0.9rem;">Luis Fernando Soto Maxe</p>
   </section>
 
@@ -202,5 +214,19 @@
     Edición limitada | Entrega en 24h Lima | Pago por Yape / Contra entrega<br>
     iARS 2025 © Todos los derechos reservados
   </footer>
+
+  <script>
+    // Temporizador regresivo 10 minutos
+    const countdown = document.getElementById('countdown');
+    let timeLeft = 600;
+    const interval = setInterval(() => {
+      const minutes = Math.floor(timeLeft / 60);
+      const seconds = timeLeft % 60;
+      countdown.textContent = `⏳ Oferta termina en: ${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+      if (timeLeft > 0) timeLeft--;
+      else clearInterval(interval);
+    }, 1000);
+  </script>
 </body>
 </html>
+
