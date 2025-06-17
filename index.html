@@ -1,10 +1,192 @@
-<!-- Aquí un código HTML que simula el logo en formato web -->
-<div style="display: flex; align-items: center; gap: 10px;">
-  <div style="font-size: 32px; color: #FF6A00;">🍏</div>
-  <div style="font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 32px; color: #FF6A00;">
-    iARS
-  </div>
-</div>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>iARS | Tu mundo. Tu ritmo.</title>
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #ffffff;
+      color: #111;
+    }
+    header {
+      text-align: center;
+      padding: 2rem;
+      background: #fff;
+      border-bottom: 2px solid #eee;
+    }
+    header img {
+      width: 250px;
+      max-width: 100%;
+    }
+    .video-section {
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    .video-section img {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 1rem;
+    }
+    .urgency-counter {
+      font-size: 1.5rem;
+      color: red;
+      margin: 1rem 0;
+      animation: pulse 1.5s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.6; }
+    }
+    .cta-button {
+      background: #FF6A00;
+      color: #fff;
+      font-weight: bold;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 0.75rem;
+      cursor: pointer;
+      font-size: 1.2rem;
+      box-shadow: 0 0 15px #FF6A00aa;
+      transition: transform 0.2s ease;
+    }
+    .cta-button:hover {
+      transform: scale(1.05);
+    }
+    .catalogo {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem;
+    }
+    .producto {
+      background: #f8f8f8;
+      border-radius: 1rem;
+      padding: 1rem;
+      text-align: center;
+    }
+    .producto img {
+      width: 100%;
+      border-radius: 0.75rem;
+    }
+    .producto h3 {
+      margin: 0.5rem 0;
+      color: #FF6A00;
+    }
+    .producto p {
+      color: #444;
+    }
+    .producto button {
+      margin-top: 0.5rem;
+      background: #FF6A00;
+      color: #fff;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: 0.5rem;
+      cursor: pointer;
+    }
+    .yape-section {
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    .yape-section img {
+      max-width: 300px;
+      width: 90%;
+      border-radius: 1rem;
+    }
+    .testimonios {
+      padding: 2rem;
+      background: #f2f2f2;
+      text-align: center;
+    }
+    .testimonio {
+      max-width: 500px;
+      margin: 1rem auto;
+      padding: 1rem;
+      background: #fff;
+      border-radius: 1rem;
+      box-shadow: 0 0 10px #ddd;
+    }
+  </style>
+  <script>
+    let unidades = 7;
+    function actualizarContador() {
+      const contador = document.getElementById("contador");
+      if (unidades > 0) {
+        unidades--;
+        contador.textContent = `🔥 Solo ${unidades} unidades disponibles hoy`;
+      }
+    }
+    setInterval(actualizarContador, 15000);
+  </script>
+</head>
+<body>
+
+  <header>
+    <img src="https://i.imgur.com/MZJD2fz.png" alt="Logo iARS" />
+  </header>
+
+  <section class="video-section">
+    <img src="oferta-destacada.jpg" alt="Oferta Destacada" />
+    <div class="urgency-counter" id="contador">🔥 Solo 7 unidades disponibles hoy</div>
+    <button class="cta-button" onclick="window.open('https://wa.me/51966885672','_blank')">Aprovechar esta oferta</button>
+  </section>
+
+  <section class="catalogo">
+    <div class="producto">
+      <img src="producto1.jpg" alt="Producto 1">
+      <h3>iARS Pods Pro</h3>
+      <p>De S/139 a <strong>S/89</strong></p>
+      <button onclick="window.open('https://wa.me/51966885672','_blank')">Comprar</button>
+    </div>
+    <div class="producto">
+      <img src="producto2_mejorado.jpg" alt="Producto 2">
+      <h3>Smartwatch Fit</h3>
+      <p>De S/199 a <strong>S/119</strong></p>
+      <button onclick="window.open('https://wa.me/51966885672','_blank')">Comprar</button>
+    </div>
+    <div class="producto">
+      <img src="producto3.jpg" alt="Producto 3">
+      <h3>Combo Auris + Watch</h3>
+      <p>De S/289 a <strong>S/199</strong></p>
+      <button onclick="window.open('https://wa.me/51966885672','_blank')">Comprar</button>
+    </div>
+    <div class="producto">
+      <img src="producto4.jpg" alt="Producto 4">
+      <h3>Cargador Magnético</h3>
+      <p>De S/79 a <strong>S/49</strong></p>
+      <button onclick="window.open('https://wa.me/51966885672','_blank')">Comprar</button>
+    </div>
+    <div class="producto">
+      <img src="producto5.jpg" alt="Producto 5">
+      <h3>iARS Pods Touch Pantalla</h3>
+      <p>De S/149 a <strong>S/99</strong></p>
+      <button onclick="window.open('https://wa.me/51966885672','_blank')">Comprar</button>
+    </div>
+  </section>
+
+  <section class="yape-section">
+    <h3>Paga rápido con Yape</h3>
+    <img src="yapeqr.jpg" alt="Yape QR" />
+  </section>
+
+  <section class="testimonios">
+    <h2>Lo que dicen nuestros clientes</h2>
+    <div class="testimonio">"Excelente sonido y la entrega fue rapidísima. Recomendado al 100%"</div>
+    <div class="testimonio">"El smartwatch tiene más funciones de las que esperaba. Muy feliz con mi compra."</div>
+    <div class="testimonio">"Ya compré 2 combos para regalar. Buen precio y buena atención."</div>
+    <div class="testimonio">"Súper fácil pagar por Yape y me respondieron al toque por WhatsApp."</div>
+    <div class="testimonio">"Lo vi en TikTok y me animé. No me arrepiento, buena calidad."</div>
+    <div class="testimonio">"La batería dura bastante, me encantaron los iARS Pods."</div>
+  </section>
+
+</body>
+</html>
+
 
   
 
