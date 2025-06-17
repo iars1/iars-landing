@@ -81,7 +81,7 @@
       box-shadow: 0 0 10px #FFA50099;
       z-index: 999;
       font-size: 0.9rem;
-      animation: pulse 1.5s infinite;
+      animation: pulseGreen 1.5s infinite;
     }
     .catalogo {
       display: grid;
@@ -173,9 +173,13 @@
         transform: translateY(0);
       }
     }
-    @keyframes pulse {
-      0%, 100% { box-shadow: 0 0 10px #FFA50099; }
-      50% { box-shadow: 0 0 20px #FFA500cc; }
+    @keyframes pulseGreen {
+      0%, 100% { box-shadow: 0 0 10px #00ff0099; }
+      50% { box-shadow: 0 0 20px #00ff00cc; }
+    }
+    @keyframes pulseRed {
+      0%, 100% { box-shadow: 0 0 10px #ff000099; }
+      50% { box-shadow: 0 0 20px #ff0000cc; }
     }
     @media screen and (max-width: 600px) {
       .cta-button { width: 90%; }
@@ -196,7 +200,7 @@
     <div class="urgency-counter">🚨 Solo 3 unidades disponibles hoy</div>
   </div>
 
-  <div class="sticky-timer">⏳ Oferta termina en: <span id="countdown">05:00</span></div>
+  <div class="sticky-timer" id="stickyTimer">⏳ Oferta termina en: <span id="countdown">05:00</span></div>
 
   <div class="catalogo container animate">
     <!-- Productos irán aquí -->
@@ -249,16 +253,19 @@
 
     let time = 300;
     const countdown = document.getElementById('countdown');
+    const stickyTimer = document.getElementById('stickyTimer');
     setInterval(() => {
       const minutes = Math.floor(time / 60);
       const seconds = time % 60;
       countdown.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
       countdown.style.color = time <= 60 ? 'red' : '#00ff00';
+      stickyTimer.style.animationName = time <= 60 ? 'pulseRed' : 'pulseGreen';
       if (time > 0) time--;
     }, 1000);
   </script>
 </body>
 </html>
+
 
 
 
