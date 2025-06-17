@@ -1,44 +1,297 @@
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const countdown = document.getElementById('countdown');
-    const stickyTimer = document.getElementById('stickyTimer');
-    let time = 300;
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🔥 iARS | Edición Limitada – Tu mundo. Tu ritmo.</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="https://iarstech.com/favicon.png">
+  <meta property="og:title" content="iARS | Tu mundo. Tu ritmo.">
+  <meta property="og:description" content="Audífonos, smartwatches y gadgets edición limitada. Compra directa por WhatsApp o Yape.">
+  <meta property="og:image" content="https://iarstech.com/oferta-destacada.jpg">
+  <meta property="og:url" content="https://iarstech.com">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #000;
+      color: #fff;
+    }
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 2rem;
+    }
+    .hero, .producto, .testimonio {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    .animate {
+      animation: fadeInUp 1.3s ease-in-out forwards;
+    }
+    .hero {
+      text-align: center;
+      padding: 3rem 1rem;
+      background: linear-gradient(145deg, #111, #000);
+    }
+    .hero h1.brand-title {
+      font-size: 3rem;
+      font-weight: bold;
+      color: #FFA500;
+      margin-bottom: 1rem;
+    }
+    .hero h2.brand-subtitle {
+      font-size: 1.5rem;
+      color: #fff;
+      margin-bottom: 2rem;
+    }
+    .cta-button {
+      padding: 1rem 2rem;
+      font-size: 1.1rem;
+      background: linear-gradient(45deg, #FFA500, #ffcc00);
+      color: #000;
+      border: none;
+      border-radius: 1rem;
+      box-shadow: 0 0 12px #FFA50088;
+      cursor: pointer;
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+    .cta-button:hover {
+      transform: scale(1.05);
+      background: linear-gradient(45deg, #ffcc00, #FFA500);
+    }
+    .urgency-counter {
+      font-size: 1.2rem;
+      margin: 1rem 0;
+      color: red;
+      font-weight: bold;
+      text-align: center;
+    }
+    .sticky-timer {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #FFA500;
+      color: #000;
+      padding: 0.6rem 1.2rem;
+      border-radius: 10px;
+      font-weight: bold;
+      box-shadow: 0 0 10px #FFA50099;
+      z-index: 999;
+      font-size: 0.9rem;
+      animation: pulseGreen 1.5s infinite;
+    }
+    .catalogo {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+    }
+    .producto {
+      background: #111;
+      border-radius: 1rem;
+      text-align: center;
+      padding: 1rem;
+      box-shadow: 0 0 12px #111;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .producto:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px #FFA50055;
+    }
+    .producto img {
+      width: 100%;
+      border-radius: 0.8rem;
+    }
+    .producto h3 {
+      color: #FFA500;
+      margin: 0.5rem 0;
+    }
+    .producto p {
+      color: #ccc;
+    }
+    .producto a button {
+      background-color: #FFA500;
+      color: #000;
+      padding: 0.6rem 1.2rem;
+      border: none;
+      border-radius: 0.5rem;
+      margin-top: 0.5rem;
+      cursor: pointer;
+      width: 100%;
+      transition: background 0.2s ease;
+    }
+    .producto a button:hover {
+      background-color: #ffcc00;
+    }
+    .testimonios {
+      background-color: #111;
+      padding: 2rem;
+    }
+    .testimonios h2 {
+      text-align: center;
+      color: #FFA500;
+      margin-bottom: 1.5rem;
+    }
+    .testimonio {
+      background: #1a1a1a;
+      margin: 1rem;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      color: #ccc;
+    }
+    .testimonio strong {
+      color: #FFA500;
+    }
+    .stars {
+      color: gold;
+    }
+    .yape {
+      text-align: center;
+      margin: 3rem auto;
+    }
+    .yape img {
+      max-width: 250px;
+      border-radius: 1rem;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      background-color: #111;
+      color: #888;
+    }
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes pulseGreen {
+      0%, 100% { box-shadow: 0 0 10px #00ff0099; }
+      50% { box-shadow: 0 0 20px #00ff00cc; }
+    }
+    @keyframes pulseRed {
+      0%, 100% { box-shadow: 0 0 10px #ff000099; }
+      50% { box-shadow: 0 0 20px #ff0000cc; }
+    }
+    @media screen and (max-width: 600px) {
+      .cta-button { width: 90%; }
+      .producto button { width: 100%; }
+      .sticky-timer {
+        right: 10px;
+        bottom: 10px;
+        font-size: 0.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="hero animate">
+    <h1 class="brand-title">iARS</h1>
+    <h2 class="brand-subtitle">Tu mundo. Tu ritmo.</h2>
+    <button class="cta-button">¡Lo quiero YA!</button>
+    <div class="urgency-counter">🚨 Solo 3 unidades disponibles hoy</div>
+  </div>
 
-    function startTimer() {
-      const interval = setInterval(() => {
-        if (time > 0) {
-          const minutes = Math.floor(time / 60);
-          const seconds = time % 60;
-          countdown.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+  <div class="sticky-timer" id="stickyTimer">⏳ Oferta termina en: <span id="countdown">05:00</span></div>
 
-          // Cambiar color y animación
-          if (time <= 60) {
+  <div class="catalogo container animate">
+    <!-- Aquí puedes agregar tus productos -->
+  </div>
+
+  <div class="testimonios animate">
+    <h2>Lo que dicen nuestros clientes</h2>
+    <div class="testimonio">
+      <strong>Laura – Surco</strong>
+      <p>“Me llegaron súper rápido y la calidad increíble. Totalmente recomendados.”</p>
+      <div class="stars">★★★★★</div>
+    </div>
+    <div class="testimonio">
+      <strong>Carlos – San Borja</strong>
+      <p>“Pensé que era floro, pero llegaron el mismo día. Están brutales.”</p>
+      <div class="stars">★★★★★</div>
+    </div>
+    <div class="testimonio">
+      <strong>Fiorella – Chorrillos</strong>
+      <p>“El regalo perfecto para mi hermano. Llegó con bolsita y todo. Lo amó.”</p>
+      <div class="stars">★★★★★</div>
+    </div>
+  </div>
+
+  <div class="yape animate">
+    <h2 style="color: #FFA500;">¿Prefieres pagar por Yape?</h2>
+    <p>Escanea este código QR y envíanos el comprobante por WhatsApp:</p>
+    <img src="yapeqr.jpg" alt="QR Yape">
+    <p style="margin-top: 1rem; font-size: 0.9rem; color: #aaa;">Luis Fernando Soto Maxe</p>
+  </div>
+
+  <footer>
+    Edición limitada | Entrega en 24h Lima | Pago por Yape / Contra entrega<br>
+    iARS 2025 © Todos los derechos reservados
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate');
+          observer.unobserve(entry.target);
+        }
+      });
+    });
+
+    document.querySelectorAll('.hero, .producto, .testimonio').forEach(el => {
+      observer.observe(el);
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const countdown = document.getElementById('countdown');
+      const stickyTimer = document.getElementById('stickyTimer');
+      let time = 300;
+
+      function startTimer() {
+        const interval = setInterval(() => {
+          if (time > 0) {
+            const minutes = Math.floor(time / 60);
+            const seconds = time % 60;
+            countdown.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+
+            if (time <= 60) {
+              countdown.style.color = 'red';
+              stickyTimer.style.animationName = 'pulseRed';
+            } else {
+              countdown.style.color = '#00ff00';
+              stickyTimer.style.animationName = 'pulseGreen';
+            }
+
+            time--;
+          } else {
+            clearInterval(interval);
+            countdown.textContent = "¡Última oportunidad!";
             countdown.style.color = 'red';
             stickyTimer.style.animationName = 'pulseRed';
-          } else {
-            countdown.style.color = '#00ff00';
-            stickyTimer.style.animationName = 'pulseGreen';
+
+            setTimeout(() => {
+              time = 300;
+              startTimer();
+            }, 10000);
           }
+        }, 1000);
+      }
 
-          time--;
-        } else {
-          clearInterval(interval);
-          countdown.textContent = "¡Última oportunidad!";
-          countdown.style.color = 'red';
-          stickyTimer.style.animationName = 'pulseRed';
+      startTimer();
+    });
+  </script>
+</body>
+</html>
 
-          // Reiniciar después de 10s
-          setTimeout(() => {
-            time = 300;
-            startTimer();
-          }, 10000);
-        }
-      }, 1000);
-    }
-
-    startTimer();
-  });
-</script>
 
         
 
