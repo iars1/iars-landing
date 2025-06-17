@@ -81,6 +81,7 @@
       box-shadow: 0 0 10px #FFA50099;
       z-index: 999;
       font-size: 0.9rem;
+      animation: pulse 1.5s infinite;
     }
     .catalogo {
       display: grid;
@@ -171,6 +172,10 @@
         opacity: 1;
         transform: translateY(0);
       }
+    }
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 10px #FFA50099; }
+      50% { box-shadow: 0 0 20px #FFA500cc; }
     }
     @media screen and (max-width: 600px) {
       .cta-button { width: 90%; }
