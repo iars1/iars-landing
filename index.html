@@ -11,6 +11,7 @@
   <meta property="og:image" content="https://iarstech.com/oferta-destacada.jpg">
   <meta property="og:url" content="https://iarstech.com">
   <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-pYh6U3Gkx64g+KMLUCw0GVYP68XruRHUZd0s2I4U41sD8BX+B81Wm2KbBknLjqcJS9/NyCU+gXIDxUQ9S8Nyrg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
     body {
       margin: 0;
@@ -33,6 +34,7 @@
     .hero {
       text-align: center;
       padding: 3rem 1rem;
+      background: linear-gradient(145deg, #111, #000);
     }
     .hero h1.brand-title {
       font-size: 3rem;
@@ -48,16 +50,17 @@
     .cta-button {
       padding: 1rem 2rem;
       font-size: 1.1rem;
-      background: #FFA500;
+      background: linear-gradient(45deg, #FFA500, #ffcc00);
       color: #000;
       border: none;
       border-radius: 1rem;
       box-shadow: 0 0 12px #FFA50088;
       cursor: pointer;
-      transition: transform 0.3s ease;
+      transition: transform 0.3s ease, background 0.3s ease;
     }
     .cta-button:hover {
       transform: scale(1.05);
+      background: linear-gradient(45deg, #ffcc00, #FFA500);
     }
     .urgency-counter, .timer {
       font-size: 1.2rem;
@@ -65,6 +68,19 @@
       color: red;
       font-weight: bold;
       text-align: center;
+    }
+    .sticky-timer {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #FFA500;
+      color: #000;
+      padding: 0.6rem 1.2rem;
+      border-radius: 10px;
+      font-weight: bold;
+      box-shadow: 0 0 10px #FFA50099;
+      z-index: 999;
+      font-size: 0.9rem;
     }
     .catalogo {
       display: grid;
@@ -104,6 +120,10 @@
       margin-top: 0.5rem;
       cursor: pointer;
       width: 100%;
+      transition: background 0.2s ease;
+    }
+    .producto a button:hover {
+      background-color: #ffcc00;
     }
     .testimonios {
       background-color: #111;
@@ -155,112 +175,82 @@
     @media screen and (max-width: 600px) {
       .cta-button { width: 90%; }
       .producto button { width: 100%; }
+      .sticky-timer {
+        right: 10px;
+        bottom: 10px;
+        font-size: 0.8rem;
+      }
     }
   </style>
-  <script>
-    window.addEventListener('scroll', () => {
-      document.querySelectorAll('.hero, .producto, .testimonio').forEach(el => {
-        const rect = el.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 100) {
-          el.classList.add('animate');
-        }
-      });
-    });
-
-    let tiempo = 5 * 60;
-    const countdown = () => {
-      const timer = document.querySelector('.timer');
-      setInterval(() => {
-        const min = Math.floor(tiempo / 60);
-        const seg = tiempo % 60;
-        timer.innerText = `⏳ Oferta termina en: ${min}:${seg < 10 ? '0' : ''}${seg}`;
-        if (tiempo > 0) tiempo--;
-      }, 1000);
-    }
-    window.onload = countdown;
-  </script>
 </head>
 <body>
-  <section class="hero animate">
+  <div class="hero animate">
     <h1 class="brand-title">iARS</h1>
     <h2 class="brand-subtitle">Tu mundo. Tu ritmo.</h2>
-    <p class="urgency-counter">🚨 Solo 5 unidades disponibles hoy</p>
-    <p class="timer">⏳ Oferta termina en: 5:00</p>
-    <a href="https://wa.me/51966885672?text=Hola,%20quiero%20separar%20mi%20iARS%20ahora" target="_blank">
-      <button class="cta-button">Separar por WhatsApp</button>
-    </a>
-  </section>
+    <button class="cta-button">¡Lo quiero YA!</button>
+    <div class="urgency-counter">🚨 Solo 3 unidades disponibles hoy</div>
+  </div>
 
-  <section class="catalogo container">
-    <div class="producto animate">
-      <img src="producto1.jpg" alt="iARS Pods Galaxy">
-      <h3>iARS Pods Galaxy</h3>
-      <p>De S/199 a <strong>S/139</strong></p>
-      <a href="https://wa.me/51966885672?text=Hola,%20quiero%20separar%20los%20iARS%20Pods%20Galaxy">
-        <button>Separar por WhatsApp</button>
-      </a>
-    </div>
-    <div class="producto animate">
-      <img src="producto2_mejorado.jpg" alt="iARS Watch Pro">
-      <h3>iARS Watch Pro</h3>
-      <p>De S/249 a <strong>S/169</strong></p>
-      <a href="https://wa.me/51966885672?text=Hola,%20quiero%20separar%20el%20iARS%20Watch%20Pro">
-        <button>Separar por WhatsApp</button>
-      </a>
-    </div>
-    <div class="producto animate">
-      <img src="producto3.jpg" alt="iARS Mini Speaker">
-      <h3>iARS Mini Speaker</h3>
-      <p>De S/129 a <strong>S/89</strong></p>
-      <a href="https://wa.me/51966885672?text=Hola,%20quiero%20separar%20el%20iARS%20Mini%20Speaker">
-        <button>Separar por WhatsApp</button>
-      </a>
-    </div>
-    <div class="producto animate">
-      <img src="producto4.jpg" alt="iARS Cargador Magnético">
-      <h3>iARS Cargador Magnético</h3>
-      <p>De S/99 a <strong>S/69</strong></p>
-      <a href="https://wa.me/51966885672?text=Hola,%20quiero%20separar%20el%20Cargador%20Magn%C3%A9tico%20iARS">
-        <button>Separar por WhatsApp</button>
-      </a>
-    </div>
-    <div class="producto animate">
-      <img src="producto5.jpg" alt="iARS TWS con Pantalla">
-      <h3>iARS TWS con Pantalla</h3>
-      <p>De S/149 a <strong>S/99</strong></p>
-      <a href="https://wa.me/51966885672?text=Hola,%20quiero%20separar%20los%20iARS%20TWS%20con%20Pantalla">
-        <button>Separar por WhatsApp</button>
-      </a>
-    </div>
-  </section>
+  <div class="sticky-timer">⏳ Oferta termina en: <span id="countdown">05:00</span></div>
 
-  <section class="testimonios container">
+  <div class="catalogo container animate">
+    <!-- Productos irán aquí -->
+  </div>
+
+  <div class="testimonios animate">
     <h2>Lo que dicen nuestros clientes</h2>
-    <div class="testimonio animate">
-      <p><strong>Laura – Surco</strong><br>“Me llegaron súper rápido y la calidad increíble, totalmente recomendados.”<br><span class="stars">★★★★★</span></p>
+    <div class="testimonio">
+      <strong>Laura – Surco</strong>
+      <p>“Me llegaron súper rápido y la calidad increíble. Totalmente recomendados.”</p>
+      <div class="stars">★★★★★</div>
     </div>
-    <div class="testimonio animate">
-      <p><strong>Carlos – San Borja</strong><br>“Pensé que era floro, pero llegaron el mismo día. Están brutales.”<br><span class="stars">★★★★★</span></p>
+    <div class="testimonio">
+      <strong>Carlos – San Borja</strong>
+      <p>“Pensé que era floro, pero llegaron el mismo día. Están brutales.”</p>
+      <div class="stars">★★★★★</div>
     </div>
-    <div class="testimonio animate">
-      <p><strong>Fiorella – Chorrillos</strong><br>“El regalo perfecto para mi hermano. Llegó con bolsita y todo. Lo amó.”<br><span class="stars">★★★★★</span></p>
+    <div class="testimonio">
+      <strong>Fiorella – Chorrillos</strong>
+      <p>“El regalo perfecto para mi hermano. Llegó con bolsita y todo. Lo amó.”</p>
+      <div class="stars">★★★★★</div>
     </div>
-    <div class="testimonio animate">
-      <p><strong>Joel – La Molina</strong><br>“Pensé que eran réplica pero suenan mejor que los que tenía. Recomendado.”<br><span class="stars">★★★★★</span></p>
-    </div>
-  </section>
+  </div>
 
-  <section class="yape animate">
+  <div class="yape animate">
     <h2 style="color: #FFA500;">¿Prefieres pagar por Yape?</h2>
     <p>Escanea este código QR y envíanos el comprobante por WhatsApp:</p>
     <img src="yapeqr.jpg" alt="QR Yape">
     <p style="margin-top: 1rem; font-size: 0.9rem; color: #aaa;">Luis Fernando Soto Maxe</p>
-  </section>
+  </div>
 
   <footer>
     Edición limitada | Entrega en 24h Lima | Pago por Yape / Contra entrega<br>
     iARS 2025 © Todos los derechos reservados
   </footer>
+
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate');
+          observer.unobserve(entry.target);
+        }
+      });
+    });
+
+    document.querySelectorAll('.hero, .producto, .testimonio').forEach(el => {
+      observer.observe(el);
+    });
+
+    let time = 300;
+    const countdown = document.getElementById('countdown');
+    setInterval(() => {
+      const minutes = Math.floor(time / 60);
+      const seconds = time % 60;
+      countdown.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+      if (time > 0) time--;
+    }, 1000);
+  </script>
 </body>
 </html>
 
