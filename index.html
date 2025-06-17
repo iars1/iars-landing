@@ -40,13 +40,6 @@
       color: #fff;
       margin-bottom: 2rem;
     }
-    .hero img {
-      max-width: 250px;
-      border: 2px solid #FFA500;
-      border-radius: 1rem;
-      padding: 0.5rem;
-      box-shadow: 0 0 20px #FFA50055;
-    }
     .cta-button {
       padding: 1rem 2rem;
       font-size: 1.1rem;
@@ -72,7 +65,7 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 2rem;
-      padding: 2rem 0;
+      padding: 2rem;
     }
     .producto {
       background: #111;
@@ -105,26 +98,6 @@
       border-radius: 0.5rem;
       margin-top: 0.5rem;
       cursor: pointer;
-    }
-    .testimonios {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      padding: 2rem;
-    }
-    .testimonio {
-      background: #111;
-      padding: 1rem;
-      border-radius: 1rem;
-      text-align: center;
-      color: #ccc;
-    }
-    .testimonio h4 {
-      color: #FFA500;
-      margin-bottom: 0.5rem;
-    }
-    .testimonio span {
-      color: gold;
     }
     .yape {
       text-align: center;
@@ -171,9 +144,56 @@
   <section class="hero">
     <h1 class="brand-title">iARS</h1>
     <h2 class="brand-subtitle">Tu mundo, tu ritmo</h2>
+    <div class="urgency-counter">🚨 Solo 3 unidades disponibles hoy</div>
+    <div class="timer">⏳ Oferta termina en: 04:59</div>
   </section>
-  <!-- El resto del contenido sigue igual -->
+
+  <section class="catalogo">
+    <div class="producto">
+      <img src="producto1.jpg" alt="Producto 1">
+      <h3>iARS Pods Galaxy</h3>
+      <p>De S/199 a <strong>S/139</strong></p>
+      <button>Separar por WhatsApp</button>
+    </div>
+    <div class="producto">
+      <img src="producto2_mejorado.jpg" alt="Producto 2">
+      <h3>iARS Watch Pro</h3>
+      <p>De S/249 a <strong>S/169</strong></p>
+      <button>Separar por WhatsApp</button>
+    </div>
+    <div class="producto">
+      <img src="producto3.jpg" alt="Producto 3">
+      <h3>iARS Mini Speaker</h3>
+      <p>De S/129 a <strong>S/89</strong></p>
+      <button>Separar por WhatsApp</button>
+    </div>
+    <div class="producto">
+      <img src="producto4.jpg" alt="Producto 4">
+      <h3>iARS Cargador Magnético</h3>
+      <p>De S/99 a <strong>S/69</strong></p>
+      <button>Separar por WhatsApp</button>
+    </div>
+    <div class="producto">
+      <img src="producto5.jpg" alt="Producto 5">
+      <h3>iARS TWS con Pantalla</h3>
+      <p>De S/149 a <strong>S/99</strong></p>
+      <button>Separar por WhatsApp</button>
+    </div>
+  </section>
+
+  <section class="yape">
+    <h2 style="color: #FFA500;">¿Prefieres pagar por Yape?</h2>
+    <p>Escanea este código QR y envíanos el comprobante por WhatsApp:</p>
+    <img src="yapeqr.jpg" alt="QR Yape" />
+    <p style="margin-top: 1rem; font-size: 0.9rem; color: #aaa;">Luis Fernando Soto Maxe</p>
+  </section>
+
+  <footer>
+    Edición limitada | Entrega en 24h Lima | Pago por Yape / Contra entrega<br>
+    iARS 2025 © Todos los derechos reservados
+  </footer>
 </body>
 </html>
+
 
 
