@@ -23,7 +23,7 @@
       transform: translateY(20px);
     }
     .animate {
-      animation: fadeInUp 1s ease forwards;
+      animation: fadeInUp 1.3s ease-in-out forwards;
     }
     .hero {
       text-align: center;
@@ -90,7 +90,7 @@
     .producto p {
       color: #ccc;
     }
-    .producto button {
+    .producto a button {
       background-color: #FFA500;
       color: #000;
       padding: 0.6rem 1.2rem;
@@ -98,6 +98,7 @@
       border-radius: 0.5rem;
       margin-top: 0.5rem;
       cursor: pointer;
+      width: 100%;
     }
     .testimonios {
       background-color: #111;
@@ -160,6 +161,18 @@
         }
       });
     });
+
+    let tiempo = 5 * 60;
+    const countdown = () => {
+      const timer = document.querySelector('.timer');
+      setInterval(() => {
+        const min = Math.floor(tiempo / 60);
+        const seg = tiempo % 60;
+        timer.innerText = `⏳ Oferta termina en: ${min}:${seg < 10 ? '0' : ''}${seg}`;
+        if (tiempo > 0) tiempo--;
+      }, 1000);
+    }
+    window.onload = countdown;
   </script>
 </head>
 <body>
@@ -167,7 +180,7 @@
     <h1 class="brand-title">iARS</h1>
     <h2 class="brand-subtitle">Tu mundo, tu ritmo</h2>
     <div class="urgency-counter">🚨 Solo 3 unidades disponibles hoy</div>
-    <div class="timer">⏳ Oferta termina en: 04:59</div>
+    <div class="timer">⏳ Oferta termina en: 05:00</div>
   </section>
 
   <section class="catalogo">
@@ -175,31 +188,41 @@
       <img src="producto1.jpg" alt="Producto 1">
       <h3>iARS Pods Galaxy</h3>
       <p>De S/199 a <strong>S/139</strong></p>
-      <button>Separar por WhatsApp</button>
+      <a href="https://wa.me/51966885672?text=Hola%2C%20quiero%20separar%20el%20producto%20iARS%20Pods%20Galaxy" target="_blank">
+        <button>Separar por WhatsApp</button>
+      </a>
     </div>
     <div class="producto">
       <img src="producto2_mejorado.jpg" alt="Producto 2">
       <h3>iARS Watch Pro</h3>
       <p>De S/249 a <strong>S/169</strong></p>
-      <button>Separar por WhatsApp</button>
+      <a href="https://wa.me/51966885672?text=Hola%2C%20quiero%20separar%20el%20iARS%20Watch%20Pro" target="_blank">
+        <button>Separar por WhatsApp</button>
+      </a>
     </div>
     <div class="producto">
       <img src="producto3.jpg" alt="Producto 3">
       <h3>iARS Mini Speaker</h3>
       <p>De S/129 a <strong>S/89</strong></p>
-      <button>Separar por WhatsApp</button>
+      <a href="https://wa.me/51966885672?text=Hola%2C%20quiero%20separar%20el%20iARS%20Mini%20Speaker" target="_blank">
+        <button>Separar por WhatsApp</button>
+      </a>
     </div>
     <div class="producto">
       <img src="producto4.jpg" alt="Producto 4">
       <h3>iARS Cargador Magnético</h3>
       <p>De S/99 a <strong>S/69</strong></p>
-      <button>Separar por WhatsApp</button>
+      <a href="https://wa.me/51966885672?text=Hola%2C%20quiero%20separar%20el%20iARS%20Cargador%20Magn%C3%A9tico" target="_blank">
+        <button>Separar por WhatsApp</button>
+      </a>
     </div>
     <div class="producto">
       <img src="producto5.jpg" alt="Producto 5">
       <h3>iARS TWS con Pantalla</h3>
       <p>De S/149 a <strong>S/99</strong></p>
-      <button>Separar por WhatsApp</button>
+      <a href="https://wa.me/51966885672?text=Hola%2C%20quiero%20separar%20el%20iARS%20TWS%20con%20Pantalla" target="_blank">
+        <button>Separar por WhatsApp</button>
+      </a>
     </div>
   </section>
 
@@ -234,9 +257,14 @@
     Edición limitada | Entrega en 24h Lima | Pago por Yape / Contra entrega<br>
     iARS 2025 © Todos los derechos reservados
   </footer>
+
+  <div style="position: fixed; bottom: 20px; right: 20px; z-index: 999;">
+    <a href="https://wa.me/51966885672?text=Hola,%20quiero%20separar%20mi%20producto%20iARS" target="_blank">
+      <button style="background: #FFA500; color: #000; border: none; padding: 0.8rem 1.2rem; border-radius: 2rem; font-weight: bold; box-shadow: 0 0 10px #FFA500;">🔥 ¡Llévatelo YA!</button>
+    </a>
+  </div>
 </body>
 </html>
-
 
 
 
