@@ -13,7 +13,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <style>
     body { margin: 0; font-family: 'Poppins', sans-serif; background: #000; color: #fff; }
-    .container { max-width: 1200px; margin: auto; padding: 2rem; }
+    .container, .testimonios, .yape { max-width: 1200px; margin: auto; padding: 2rem 1rem; }
     .hero, .producto, .testimonio, .oferta, .temporizador { opacity: 0; transform: translateY(20px); }
     .animate { animation: fadeInUp 1.3s ease-in-out forwards; }
     .hero { text-align: center; padding: 3rem 1rem; background: linear-gradient(145deg, #111, #000); }
@@ -31,8 +31,7 @@
       font-size: 1.1rem; margin-top: 1.2rem; color: #FF8000; font-weight: bold; text-align: center;
     }
     .temporizador {
-      text-align: center; padding: 2rem 1rem;
-      font-size: 1.3rem; font-weight: bold; color: #FFA500;
+      text-align: center; padding: 2rem 1rem; font-size: 1.3rem; font-weight: bold; color: #FFA500;
     }
     .temporizador span.red { color: red; }
     .oferta { text-align: center; padding: 2rem 1rem; }
@@ -40,7 +39,7 @@
     .oferta .boton-oferta { margin-top: 1.5rem; }
     .catalogo {
       display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem; padding: 2rem;
+      gap: 2rem; justify-content: center; padding: 2rem 1rem;
     }
     .producto {
       background: #111; border-radius: 1rem; text-align: center; padding: 1rem;
@@ -58,6 +57,13 @@
       width: 100%; transition: background 0.2s ease;
     }
     .producto a button:hover { background-color: #ffcc00; }
+    .whatsapp-float {
+      position: fixed; bottom: 20px; right: 20px; z-index: 999;
+      background-color: #25D366; color: #fff; padding: 15px;
+      border-radius: 50%; box-shadow: 0 0 10px #25D366;
+      font-size: 24px; display: flex; justify-content: center; align-items: center;
+    }
+    .whatsapp-float:hover { background-color: #1ebc59; }
     @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
@@ -90,7 +96,6 @@
   </div>
 
   <div class="catalogo container animate">
-    <!-- PRODUCTO 1 -->
     <div class="producto">
       <img src="producto1.jpg" alt="iARS PRO X" />
       <h3>iARS PRO X</h3>
@@ -98,7 +103,7 @@
       <p><span class="precio-anterior">S/ 169.00</span> <span class="precio-ahora">S/ 129.00</span></p>
       <a href="https://wa.me/51966885672?text=Hola,%20quiero%20comprar%20los%20iARS%20PRO%20X"><button>Comprar por WhatsApp</button></a>
     </div>
-    <!-- PRODUCTO 2 -->
+
     <div class="producto">
       <img src="producto2_mejorado.jpg" alt="Smartwatch Ultra 7" />
       <h3>Smartwatch Ultra 7</h3>
@@ -106,7 +111,7 @@
       <p><span class="precio-anterior">S/ 189.00</span> <span class="precio-ahora">S/ 149.00</span></p>
       <a href="https://wa.me/51966885672?text=Hola,%20quiero%20comprar%20el%20Smartwatch%20Ultra%207"><button>Comprar por WhatsApp</button></a>
     </div>
-    <!-- PRODUCTO 3 -->
+
     <div class="producto">
       <img src="producto3.jpg" alt="PowerBank 20k" />
       <h3>PowerBank 20,000 mAh</h3>
@@ -114,7 +119,7 @@
       <p><span class="precio-anterior">S/ 119.00</span> <span class="precio-ahora">S/ 89.00</span></p>
       <a href="https://wa.me/51966885672?text=Hola,%20quiero%20comprar%20el%20PowerBank%2020k"><button>Comprar por WhatsApp</button></a>
     </div>
-    <!-- PRODUCTO 4 -->
+
     <div class="producto">
       <img src="producto4.jpg" alt="Gaming LED" />
       <h3>Auriculares Gaming LED</h3>
@@ -122,7 +127,7 @@
       <p><span class="precio-anterior">S/ 169.00</span> <span class="precio-ahora">S/ 139.00</span></p>
       <a href="https://wa.me/51966885672?text=Hola,%20quiero%20los%20Auriculares%20Gaming%20LED"><button>Comprar por WhatsApp</button></a>
     </div>
-    <!-- PRODUCTO 5 -->
+
     <div class="producto">
       <img src="producto5.jpg" alt="Altavoz Bluetooth" />
       <h3>Mini Altavoz Bluetooth</h3>
@@ -132,15 +137,15 @@
     </div>
   </div>
 
-  <!-- TESTIMONIOS -->
   <div class="testimonios animate">
     <h2>Lo que dicen nuestros clientes</h2>
-    <div class="testimonio"><strong>Laura – Surco</strong><p>“Me llegaron súper rápido y la calidad increíble. Totalmente recomendados.”</p><div class="stars">★★★★★</div></div>
-    <div class="testimonio"><strong>Carlos – San Borja</strong><p>“Pensé que era floro, pero llegaron el mismo día. Están brutales.”</p><div class="stars">★★★★★</div></div>
-    <div class="testimonio"><strong>Fiorella – Chorrillos</strong><p>“El regalo perfecto para mi hermano. Llegó con bolsita y todo. Lo amó.”</p><div class="stars">★★★★★</div></div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem;">
+      <div class="testimonio"><strong>Laura – Surco</strong><p>“Me llegaron súper rápido y la calidad increíble. Totalmente recomendados.”</p><div class="stars">★★★★★</div></div>
+      <div class="testimonio"><strong>Carlos – San Borja</strong><p>“Pensé que era floro, pero llegaron el mismo día. Están brutales.”</p><div class="stars">★★★★★</div></div>
+      <div class="testimonio"><strong>Fiorella – Chorrillos</strong><p>“El regalo perfecto para mi hermano. Llegó con bolsita y todo. Lo amó.”</p><div class="stars">★★★★★</div></div>
+    </div>
   </div>
 
-  <!-- YAPE -->
   <div class="yape animate">
     <h2 style="color: #FFA500;">¿Prefieres pagar por Yape?</h2>
     <p>Escanea este código QR y envíanos el comprobante por WhatsApp:</p>
@@ -148,7 +153,6 @@
     <p style="margin-top: 1rem; font-size: 0.9rem; color: #aaa;">Luis Fernando Soto Maxe</p>
   </div>
 
-  <!-- BOTÓN FLOTANTE WHATSAPP -->
   <a href="https://wa.me/51966885672?text=Hola,%20tengo%20una%20consulta%20sobre%20iARS" class="whatsapp-float" target="_blank">
     <i class="fab fa-whatsapp"></i>
   </a>
@@ -158,7 +162,6 @@
     iARS 2025 © Todos los derechos reservados
   </footer>
 
-  <!-- SCRIPT ANIMACIÓN Y TEMPORIZADOR -->
   <script>
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -172,7 +175,6 @@
       observer.observe(el);
     });
 
-    // TEMPORIZADOR DIARIO
     function updateCountdown() {
       const now = new Date();
       const midnight = new Date();
@@ -195,6 +197,7 @@
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </body>
 </html>
+
 
 
 
