@@ -144,6 +144,58 @@
     </ul>
     <button onclick="window.open('https://wa.me/51966885672','_blank')">Comprar</button>
   </div>
+<!-- Puedes seguir con los demás productos aquí -->
+</section>
+<section class="yape-section">
+  <h3>Paga rápido con Yape</h3>
+  <img src="yapeqr.jpg" alt="Yape QR">
+</section>
+<section class="testimonios">
+  <h2>Lo que dicen nuestros clientes</h2>
+  <div class="testimonio">🧍‍♂️ <strong>Juan C. – San Borja:</strong><br>“Me llegaron en 1 día y suenan brutales. 10/10”</div>
+  <div class="testimonio">👩‍🦱 <strong>Lucía M. – Lince:</strong><br>“El smartwatch tiene más funciones de las que esperaba. Muy feliz con mi compra.”</div>
+  <div class="testimonio">👨‍💼 <strong>Pedro T. – Surco:</strong><br>“Ya compré 2 combos para regalar. Buen precio y buena atención.”</div>
+  <div class="testimonio">👩 <strong>Angela R. – Magdalena:</strong><br>“Súper fácil pagar por Yape y me respondieron al toque por WhatsApp.”</div>
+  <div class="testimonio">👦 <strong>Luis M. – Los Olivos:</strong><br>“Lo vi en TikTok y me animé. No me arrepiento, buena calidad.”</div>
+  <div class="testimonio">🧑‍🎧 <strong>Stefano B. – Miraflores:</strong><br>“La batería dura bastante, me encantaron los iARS Pods.”</div>
+</section>
+<footer>
+  <div class="payment-icons">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="Visa">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Mastercard-logo.png" alt="Mastercard">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal">
+  </div>
+  <p>&copy; 2025 iARS. Todos los derechos reservados.</p>
+</footer>
+<script>
+let unidades = 7;
+function actualizarContador() {
+  const contador = document.getElementById("contador");
+  if (unidades > 0) {
+    unidades--;
+    contador.textContent = `🔥 Solo ${unidades} unidades disponibles hoy`;
+  }
+}
+setInterval(actualizarContador, 15000);
+function startCountdown(duration, display) {
+  let timer = duration, minutes, seconds;
+  setInterval(function () {
+    minutes = parseInt(timer / 60, 10);
+    seconds = parseInt(timer % 60, 10);
+    minutes = minutes < 10 ? "0" + minutes : minutes;
+    seconds = seconds < 10 ? "0" + seconds : seconds;
+    display.textContent = `⏳ Esta oferta termina en: ${minutes}:${seconds}`;
+    if (--timer < 0) timer = duration;
+  }, 1000);
+}
+window.onload = function () {
+  const countdown = document.querySelector('.countdown-timer');
+  startCountdown(600, countdown);
+}
+</script>
+</body>
+</html>
+
 
 
 
