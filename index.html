@@ -171,9 +171,19 @@
       background-color: #eee;
       color: #111;
     }
-    footer img:hover {
-      transform: scale(1.15);
+    .payment-icons {
+      margin-bottom: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+    .payment-icons img {
+      height: 30px;
       transition: transform 0.3s ease;
+    }
+    .payment-icons img:hover {
+      transform: scale(1.2);
     }
     .whatsapp-float {
       position: fixed;
@@ -278,6 +288,11 @@
 </section>
 
 <footer>
+  <div class="payment-icons">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="Visa">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Mastercard-logo.png" alt="Mastercard">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal">
+  </div>
   <p>&copy; 2025 iARS. Todos los derechos reservados.</p>
 </footer>
 
@@ -311,6 +326,7 @@ window.onload = function () {
 
 </body>
 </html>
+
 
 
 
