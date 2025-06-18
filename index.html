@@ -211,10 +211,113 @@
 </head>
 <body>
 
-<!-- CONTENIDO ORIGINAL MANTENIDO COMPLETO Y OPTIMIZADO RESPONSIVE -->
+  <a href="https://wa.me/51966885672" class="whatsapp-float" target="_blank">💬</a>
+
+  <header>
+    <img src="https://iars-landing-git-main-iars-projects-228d8b80.vercel.app/logo-iars.png" alt="Logo iARS" />
+    <div class="subtitulo-emocional">Los audífonos más valorados por los limeños que aman el ritmo. Garantía + envío inmediato.</div>
+  </header>
+
+  <section class="video-section">
+    <img src="oferta-destacada.jpg" alt="Oferta Destacada" />
+    <div class="beneficios">
+      <div>✅ Envío en 24h</div>
+      <div>🔒 Pago seguro</div>
+      <div>📦 Garantía real</div>
+    </div>
+    <div class="urgency-counter" id="contador">🔥 Solo 7 unidades disponibles hoy</div>
+    <div class="countdown-timer"></div>
+    <button class="cta-button" onclick="window.open('https://wa.me/51966885672','_blank')">Aprovechar esta oferta</button>
+  </section>
+
+  <section class="catalogo">
+    <div class="producto">
+      <img src="producto1.jpg" alt="Producto 1">
+      <h3>iARS Pods Pro</h3>
+      <p>De S/139 a <strong>S/89</strong></p>
+      <button onclick="window.open('https://wa.me/51966885672','_blank')">Comprar</button>
+    </div>
+    <div class="producto">
+      <img src="producto2_mejorado.jpg" alt="Producto 2">
+      <h3>Smartwatch Fit</h3>
+      <p>De S/199 a <strong>S/119</strong></p>
+      <button onclick="window.open('https://wa.me/51966885672','_blank')">Comprar</button>
+    </div>
+    <div class="producto combo-destacado">
+      <img src="producto3.jpg" alt="Producto 3">
+      <h3>Combo Auris + Watch 🔥</h3>
+      <p>De S/289 a <strong>S/199</strong></p>
+      <button onclick="window.open('https://wa.me/51966885672','_blank')">Comprar</button>
+    </div>
+    <div class="producto">
+      <img src="producto4.jpg" alt="Producto 4">
+      <h3>Cargador Magnético</h3>
+      <p>De S/79 a <strong>S/49</strong></p>
+      <button onclick="window.open('https://wa.me/51966885672','_blank')">Comprar</button>
+    </div>
+    <div class="producto">
+      <img src="producto5.jpg" alt="Producto 5">
+      <h3>iARS Pods Touch Pantalla</h3>
+      <p>De S/149 a <strong>S/99</strong></p>
+      <button onclick="window.open('https://wa.me/51966885672','_blank')">Comprar</button>
+    </div>
+  </section>
+
+  <section class="yape-section">
+    <h3>Paga rápido con Yape</h3>
+    <img src="yapeqr.jpg" alt="Yape QR" />
+  </section>
+
+  <section class="testimonios">
+    <h2>Lo que dicen nuestros clientes</h2>
+    <div class="testimonio">🧍‍♂️ <strong>Juan C. – San Borja:</strong><br>“Me llegaron en 1 día y suenan brutales. 10/10”</div>
+    <div class="testimonio">👩‍🦱 <strong>Lucía M. – Lince:</strong><br>“El smartwatch tiene más funciones de las que esperaba. Muy feliz con mi compra.”</div>
+    <div class="testimonio">👨‍💼 <strong>Pedro T. – Surco:</strong><br>“Ya compré 2 combos para regalar. Buen precio y buena atención.”</div>
+    <div class="testimonio">👩 <strong>Angela R. – Magdalena:</strong><br>“Súper fácil pagar por Yape y me respondieron al toque por WhatsApp.”</div>
+    <div class="testimonio">👦 <strong>Luis M. – Los Olivos:</strong><br>“Lo vi en TikTok y me animé. No me arrepiento, buena calidad.”</div>
+    <div class="testimonio">🧑‍🎧 <strong>Stefano B. – Miraflores:</strong><br>“La batería dura bastante, me encantaron los iARS Pods.”</div>
+  </section>
+
+  <footer>
+    <div style="margin-top: 1.5rem; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 10px;">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="Visa" style="height: 30px; transition: transform 0.3s; cursor: pointer;" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Mastercard-logo.png" alt="Mastercard" style="height: 30px; transition: transform 0.3s; cursor: pointer;" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal" style="height: 30px; transition: transform 0.3s; cursor: pointer;" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'" />
+    </div>
+    <p>&copy; 2025 iARS. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    let unidades = 7;
+    function actualizarContador() {
+      const contador = document.getElementById("contador");
+      if (unidades > 0) {
+        unidades--;
+        contador.textContent = `🔥 Solo ${unidades} unidades disponibles hoy`;
+      }
+    }
+    setInterval(actualizarContador, 15000);
+
+    function startCountdown(duration, display) {
+      let timer = duration, minutes, seconds;
+      setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+        display.textContent = `⏳ Esta oferta termina en: ${minutes}:${seconds}`;
+        if (--timer < 0) timer = duration;
+      }, 1000);
+    }
+    window.onload = function () {
+      const countdown = document.querySelector('.countdown-timer');
+      startCountdown(600, countdown);
+    }
+  </script>
 
 </body>
 </html>
+
 
 
 
