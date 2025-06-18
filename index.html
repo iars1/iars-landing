@@ -9,10 +9,10 @@
   <style>
     :root {
       --main-orange: #FF6A00;
-      --dark-bg: #111;
-      --dark-bg-soft: #1a1a1a;
-      --text-light: #eee;
-      --text-medium: #bbb;
+      --light-bg: #ffffff;
+      --light-bg-soft: #f4f4f4;
+      --text-dark: #111;
+      --text-medium: #444;
     }
     * {
       box-sizing: border-box;
@@ -20,14 +20,14 @@
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background: var(--dark-bg);
-      color: var(--text-light);
+      background: linear-gradient(to bottom, var(--light-bg), var(--light-bg-soft));
+      color: var(--text-dark);
     }
     header {
       text-align: center;
       padding: 2rem 1rem 0.5rem;
-      background: var(--dark-bg);
-      border-bottom: 2px solid #333;
+      background: var(--light-bg);
+      border-bottom: 2px solid #eee;
     }
     header img {
       width: clamp(150px, 30vw, 250px);
@@ -58,7 +58,7 @@
     }
     .urgency-counter {
       font-size: 1.5rem;
-      color: #ff4d4d;
+      color: #d90000;
       margin: 1rem 0;
     }
     .countdown-timer {
@@ -86,10 +86,11 @@
       padding: 2rem;
     }
     .producto {
-      background: var(--dark-bg-soft);
+      background: #fff;
       border-radius: 1rem;
       padding: 1rem;
       text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     }
     .producto img {
       width: 100%;
@@ -113,10 +114,12 @@
     }
     .combo-destacado {
       border: 2px solid var(--main-orange);
+      box-shadow: 0 0 20px #FF6A0077;
     }
     .yape-section {
       text-align: center;
       padding: 2rem 1rem;
+      background-color: var(--light-bg-soft);
     }
     .yape-section img {
       max-width: 300px;
@@ -124,23 +127,23 @@
       border-radius: 1rem;
     }
     .testimonios {
-      padding: 2rem 1rem;
-      background: #1c1c1c;
+      padding: 2rem;
+      background: #f2f2f2;
       text-align: center;
     }
     .testimonio {
       max-width: 500px;
       margin: 1rem auto;
       padding: 1rem;
-      background: #2b2b2b;
-      color: #eee;
+      background: #fff;
       border-radius: 1rem;
+      box-shadow: 0 0 10px #ddd;
     }
     footer {
       text-align: center;
       padding: 2rem 1rem;
-      background-color: #000;
-      color: #fff;
+      background-color: #eee;
+      color: #111;
     }
     .whatsapp-float {
       position: fixed;
@@ -167,34 +170,9 @@
       }
     }
   </style>
-  <script>
-    let unidades = 7;
-    function actualizarContador() {
-      const contador = document.getElementById("contador");
-      if (unidades > 0) {
-        unidades--;
-        contador.textContent = `🔥 Solo ${unidades} unidades disponibles hoy`;
-      }
-    }
-    setInterval(actualizarContador, 15000);
-
-    function startCountdown(duration, display) {
-      let timer = duration, minutes, seconds;
-      setInterval(function () {
-        minutes = parseInt(timer / 60, 10);
-        seconds = parseInt(timer % 60, 10);
-        display.textContent = `⏳ Esta oferta termina en: ${minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
-        if (--timer < 0) timer = duration;
-      }, 1000);
-    }
-    window.onload = function () {
-      const countdown = document.querySelector('.countdown-timer');
-      startCountdown(600, countdown);
-    }
-  </script>
 </head>
 <body>
-  <a href="https://wa.me/51966885672" class="whatsapp-float" target="_blank">💬</a>
+<a href="https://wa.me/51966885672" class="whatsapp-float" target="_blank">💬</a>
   <header>
     <img src="https://iars-landing-git-main-iars-projects-228d8b80.vercel.app/logo-iars.png" alt="Logo iARS" />
     <div class="subtitulo-emocional">Los audífonos más valorados por los limeños que aman el ritmo. Garantía + envío inmediato.</div>
@@ -268,16 +246,31 @@
     </div>
     <p>&copy; 2025 iARS. Todos los derechos reservados.</p>
   </footer>
+
+  <script>
+    let unidades = 7;
+    function actualizarContador() {
+      const contador = document.getElementById("contador");
+      if (unidades > 0) {
+        unidades--;
+        contador.textContent = `🔥 Solo ${unidades} unidades disponibles hoy`;
+      }
+    }
+    setInterval(actualizarContador, 15000);
+
+    function startCountdown(duration, display) {
+      let timer = duration, minutes, seconds;
+      setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+        display.textContent = `⏳ Esta oferta termina en: ${minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
+        if (--timer < 0) timer = duration;
+      }, 1000);
+    }
+    window.onload = function () {
+      const countdown = document.querySelector('.countdown-timer');
+      startCountdown(600, countdown);
+    }
+  </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-  
-
-
