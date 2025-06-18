@@ -6,13 +6,6 @@
   <title>iARS | Tu mundo. Tu ritmo.</title>
   <link rel="icon" type="image/png" href="favicon.png" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
-  </script>
   <style>
     :root {
       --main-orange: #FF6A00;
@@ -39,16 +32,11 @@
     header img {
       width: clamp(150px, 30vw, 250px);
       max-width: 100%;
-      animation: fadeZoom 1.2s ease-in-out;
     }
     .subtitulo-emocional {
       font-size: clamp(1rem, 2vw, 1.2rem);
       color: var(--text-medium);
       margin-top: 0.5rem;
-    }
-    @keyframes fadeZoom {
-      from { opacity: 0; transform: scale(0.8); }
-      to { opacity: 1; transform: scale(1); }
     }
     .video-section {
       text-align: center;
@@ -65,7 +53,6 @@
       gap: 2rem;
       padding: 1rem;
       font-size: 1rem;
-      text-align: center;
       color: var(--text-medium);
       flex-wrap: wrap;
     }
@@ -73,17 +60,11 @@
       font-size: 1.5rem;
       color: #ff4d4d;
       margin: 1rem 0;
-      animation: pulse 1.5s infinite;
-    }
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.6; }
     }
     .countdown-timer {
       font-size: 1.2rem;
       font-weight: bold;
       color: var(--main-orange);
-      margin-top: 0.5rem;
     }
     .cta-button {
       background: var(--main-orange);
@@ -94,14 +75,9 @@
       border-radius: 0.75rem;
       cursor: pointer;
       font-size: 1.2rem;
-      box-shadow: 0 0 15px #FF6A00aa;
-      transition: transform 0.2s ease;
       margin-top: 20px;
       width: 90%;
       max-width: 400px;
-    }
-    .cta-button:hover {
-      transform: scale(1.05);
     }
     .catalogo {
       display: grid;
@@ -114,20 +90,10 @@
       border-radius: 1rem;
       padding: 1rem;
       text-align: center;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-      transition: transform 0.3s ease;
-    }
-    .producto:hover {
-      transform: scale(1.03);
     }
     .producto img {
       width: 100%;
-      height: auto;
       border-radius: 0.75rem;
-      transition: transform 0.3s ease;
-    }
-    .producto img:hover {
-      transform: scale(1.05);
     }
     .producto h3 {
       margin: 0.5rem 0;
@@ -144,16 +110,13 @@
       padding: 0.6rem 1.2rem;
       border-radius: 0.5rem;
       cursor: pointer;
-      width: 100%;
     }
     .combo-destacado {
       border: 2px solid var(--main-orange);
-      box-shadow: 0 0 20px #FF6A0077;
     }
     .yape-section {
       text-align: center;
       padding: 2rem 1rem;
-      background-color: #222;
     }
     .yape-section img {
       max-width: 300px;
@@ -172,23 +135,12 @@
       background: #2b2b2b;
       color: #eee;
       border-radius: 1rem;
-      box-shadow: 0 0 10px #000;
     }
     footer {
       text-align: center;
       padding: 2rem 1rem;
       background-color: #000;
       color: #fff;
-    }
-    footer img {
-      width: 80px;
-      margin-bottom: 1rem;
-    }
-    .social-icons a {
-      margin: 0 10px;
-      color: white;
-      font-size: 24px;
-      text-decoration: none;
     }
     .whatsapp-float {
       position: fixed;
@@ -199,12 +151,10 @@
       background-color: #25D366;
       color: #fff;
       border-radius: 50px;
-      text-align: center;
       font-size: 30px;
-      box-shadow: 2px 2px 3px #999;
-      z-index: 100;
+      text-align: center;
       line-height: 60px;
-      text-decoration: none;
+      z-index: 100;
     }
     @media screen and (max-width: 768px) {
       .catalogo {
@@ -215,17 +165,112 @@
       .catalogo {
         grid-template-columns: repeat(2, 1fr);
       }
-      .beneficios div {
-        width: 100%;
-        margin-bottom: 0.5rem;
-      }
     }
   </style>
+  <script>
+    let unidades = 7;
+    function actualizarContador() {
+      const contador = document.getElementById("contador");
+      if (unidades > 0) {
+        unidades--;
+        contador.textContent = `🔥 Solo ${unidades} unidades disponibles hoy`;
+      }
+    }
+    setInterval(actualizarContador, 15000);
+
+    function startCountdown(duration, display) {
+      let timer = duration, minutes, seconds;
+      setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+        display.textContent = `⏳ Esta oferta termina en: ${minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
+        if (--timer < 0) timer = duration;
+      }, 1000);
+    }
+    window.onload = function () {
+      const countdown = document.querySelector('.countdown-timer');
+      startCountdown(600, countdown);
+    }
+  </script>
 </head>
 <body>
-  <!-- Aquí iría el contenido visible: header, productos, yape, testimonios, footer -->
+  <a href="https://wa.me/51966885672" class="whatsapp-float" target="_blank">💬</a>
+  <header>
+    <img src="https://iars-landing-git-main-iars-projects-228d8b80.vercel.app/logo-iars.png" alt="Logo iARS" />
+    <div class="subtitulo-emocional">Los audífonos más valorados por los limeños que aman el ritmo. Garantía + envío inmediato.</div>
+  </header>
+
+  <section class="video-section">
+    <img src="oferta-destacada.jpg" alt="Oferta Destacada" />
+    <div class="beneficios">
+      <div>✅ Envío en 24h</div>
+      <div>🔒 Pago seguro</div>
+      <div>📦 Garantía real</div>
+    </div>
+    <div class="urgency-counter" id="contador">🔥 Solo 7 unidades disponibles hoy</div>
+    <div class="countdown-timer"></div>
+    <button class="cta-button" onclick="window.open('https://wa.me/51966885672','_blank')">Aprovechar esta oferta</button>
+  </section>
+
+  <section class="catalogo">
+    <div class="producto">
+      <img src="producto1.jpg" alt="Producto 1">
+      <h3>iARS Pods Pro</h3>
+      <p>De S/139 a <strong>S/89</strong></p>
+      <button onclick="window.open('https://wa.me/51966885672','_blank')">Comprar</button>
+    </div>
+    <div class="producto">
+      <img src="producto2_mejorado.jpg" alt="Producto 2">
+      <h3>Smartwatch Fit</h3>
+      <p>De S/199 a <strong>S/119</strong></p>
+      <button onclick="window.open('https://wa.me/51966885672','_blank')">Comprar</button>
+    </div>
+    <div class="producto combo-destacado">
+      <img src="producto3.jpg" alt="Producto 3">
+      <h3>Combo Auris + Watch 🔥</h3>
+      <p>De S/289 a <strong>S/199</strong></p>
+      <button onclick="window.open('https://wa.me/51966885672','_blank')">Comprar</button>
+    </div>
+    <div class="producto">
+      <img src="producto4.jpg" alt="Producto 4">
+      <h3>Cargador Magnético</h3>
+      <p>De S/79 a <strong>S/49</strong></p>
+      <button onclick="window.open('https://wa.me/51966885672','_blank')">Comprar</button>
+    </div>
+    <div class="producto">
+      <img src="producto5.jpg" alt="Producto 5">
+      <h3>iARS Pods Touch Pantalla</h3>
+      <p>De S/149 a <strong>S/99</strong></p>
+      <button onclick="window.open('https://wa.me/51966885672','_blank')">Comprar</button>
+    </div>
+  </section>
+
+  <section class="yape-section">
+    <h3>Paga rápido con Yape</h3>
+    <img src="yapeqr.jpg" alt="Yape QR" />
+  </section>
+
+  <section class="testimonios">
+    <h2>Lo que dicen nuestros clientes</h2>
+    <div class="testimonio">🧍‍♂️ <strong>Juan C. – San Borja:</strong><br>“Me llegaron en 1 día y suenan brutales. 10/10”</div>
+    <div class="testimonio">👩‍🦱 <strong>Lucía M. – Lince:</strong><br>“El smartwatch tiene más funciones de las que esperaba. Muy feliz con mi compra.”</div>
+    <div class="testimonio">👨‍💼 <strong>Pedro T. – Surco:</strong><br>“Ya compré 2 combos para regalar. Buen precio y buena atención.”</div>
+    <div class="testimonio">👩 <strong>Angela R. – Magdalena:</strong><br>“Súper fácil pagar por Yape y me respondieron al toque por WhatsApp.”</div>
+    <div class="testimonio">👦 <strong>Luis M. – Los Olivos:</strong><br>“Lo vi en TikTok y me animé. No me arrepiento, buena calidad.”</div>
+    <div class="testimonio">🧑‍🎧 <strong>Stefano B. – Miraflores:</strong><br>“La batería dura bastante, me encantaron los iARS Pods.”</div>
+  </section>
+
+  <footer>
+    <div style="margin-top: 1.5rem; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 10px;">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="Visa" style="height: 30px;">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Mastercard-logo.png" alt="Mastercard" style="height: 30px;">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal" style="height: 30px;">
+    </div>
+    <p>&copy; 2025 iARS. Todos los derechos reservados.</p>
+  </footer>
 </body>
 </html>
+
 
 
 
