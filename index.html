@@ -10,7 +10,7 @@
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background-color: #ffffff;
+      background: linear-gradient(to bottom, #ffffff, #f4f4f4);
       color: #111;
     }
     header {
@@ -22,6 +22,11 @@
     header img {
       width: 250px;
       max-width: 100%;
+      animation: fadeZoom 1.2s ease-in-out;
+    }
+    @keyframes fadeZoom {
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
     }
     .video-section {
       text-align: center;
@@ -53,6 +58,7 @@
       font-size: 1.2rem;
       box-shadow: 0 0 15px #FF6A00aa;
       transition: transform 0.2s ease;
+      margin-top: 20px;
     }
     .cta-button:hover {
       transform: scale(1.05);
@@ -68,10 +74,19 @@
       border-radius: 1rem;
       padding: 1rem;
       text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease;
+    }
+    .producto:hover {
+      transform: scale(1.03);
     }
     .producto img {
       width: 100%;
       border-radius: 0.75rem;
+      transition: transform 0.3s ease;
+    }
+    .producto img:hover {
+      transform: scale(1.05);
     }
     .producto h3 {
       margin: 0.5rem 0;
@@ -92,6 +107,7 @@
     .yape-section {
       text-align: center;
       padding: 2rem 1rem;
+      background-color: #f0f0f0;
     }
     .yape-section img {
       max-width: 300px;
@@ -111,6 +127,37 @@
       border-radius: 1rem;
       box-shadow: 0 0 10px #ddd;
     }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background-color: #222;
+      color: #fff;
+    }
+    footer img {
+      width: 80px;
+      margin-bottom: 1rem;
+    }
+    .social-icons a {
+      margin: 0 10px;
+      color: white;
+      font-size: 24px;
+      text-decoration: none;
+    }
+    .whatsapp-float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: #fff;
+      border-radius: 50px;
+      text-align: center;
+      font-size: 30px;
+      box-shadow: 2px 2px 3px #999;
+      z-index: 100;
+      line-height: 60px;
+    }
   </style>
   <script>
     let unidades = 7;
@@ -125,6 +172,8 @@
   </script>
 </head>
 <body>
+
+  <a href="https://wa.me/51966885672" class="whatsapp-float" target="_blank">💬</a>
 
   <header>
     <img src="https://iars-landing-git-main-iars-projects-228d8b80.vercel.app/logo-iars.png" alt="Logo iARS" />
@@ -184,8 +233,19 @@
     <div class="testimonio">"La batería dura bastante, me encantaron los iARS Pods."</div>
   </section>
 
+  <footer>
+    <img src="https://iars-landing-git-main-iars-projects-228d8b80.vercel.app/logo-iars.png" alt="Footer Logo">
+    <div class="social-icons">
+      <a href="https://www.instagram.com/" target="_blank">📸</a>
+      <a href="https://www.tiktok.com/" target="_blank">🎵</a>
+      <a href="https://wa.me/51966885672" target="_blank">💬</a>
+    </div>
+    <p>&copy; 2025 iARS. Todos los derechos reservados.</p>
+  </footer>
+
 </body>
 </html>
+
 
 
   
