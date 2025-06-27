@@ -42,7 +42,15 @@
     .catalogo { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.5rem; padding: 2rem; }
     .producto { background: #fff; border-radius: 1rem; padding: 1rem; text-align: center; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); animation: fadeZoom 0.5s ease-in-out; transition: transform 0.3s ease; }
     .producto:hover { transform: scale(1.08); }
-    .producto img { width: 100%; border-radius: 0.75rem; transition: transform 0.3s ease; }
+    .producto img {
+  width: 100%;
+  height: auto;                /* Mantiene proporción original */
+  aspect-ratio: 1/1;           /* Fuerza proporción cuadrada */
+  object-fit: cover;           /* Ajusta imagen al contenedor sin deformarla */
+  border-radius: 0.75rem;
+  transition: transform 0.3s ease;
+}
+
     .producto img:hover { transform: scale(1.08); }
     .producto h3 { margin: 0.5rem 0; color: var(--main-orange); }
     .producto p { color: var(--text-medium); }
